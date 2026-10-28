@@ -40,6 +40,7 @@ rtk bin/rails db:seed
 - Linha do tempo com acesso aos perfis.
 - Busca por nome, partido ou agenda e filtros por posição e década.
 - Perfis com contexto político, economia, políticas, marcos e fontes.
+- Seção “Como chegou ao poder?” com sucessões, chapas, todos os candidatos por turno e coligações eleitorais de 1985 a 2022.
 - Comparação de duas gestões lado a lado.
 - Gráfico do IPCA com 30 observações oficiais do IBGE, de 1995 a 2024.
 - Exportação CSV em UTF-8, com os filtros selecionados.
@@ -49,6 +50,8 @@ rtk bin/rails db:seed
 ## Dados e critérios
 
 O catálogo está em [db/data/administrations.yml](db/data/administrations.yml); a série econômica está em [db/data/ipca.json](db/data/ipca.json). A carga é idempotente.
+
+A origem dos mandatos está em [db/data/accessions.yml](db/data/accessions.yml), que referencia por ano as eleições em [db/data/elections.yml](db/data/elections.yml). A carga resolve essas referências no campo JSONB `accession` de cada governo. Resultados, alianças e fontes também são incluídos na exportação CSV.
 
 FHC e os mandatos consecutivos de Lula e Dilma são agrupados por período contínuo. Lula a partir de 2023 tem registro próprio. As datas usam o último dia completo anterior à sucessão; as notas distinguem exercício e titularidade. Tancredo não entra na contagem, pois não exerceu o cargo.
 

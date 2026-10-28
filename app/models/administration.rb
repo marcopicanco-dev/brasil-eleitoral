@@ -6,6 +6,11 @@ class Administration < ApplicationRecord
     "right" => "Direita"
   }.freeze
 
+  ACCESSION_METHODS = {
+    "direct_election" => "Eleição direta",
+    "succession" => "Sucessão pela Vice-Presidência"
+  }.freeze
+
   belongs_to :president
   scope :chronological, -> { order(:started_on) }
   validates :slug, :label, :party, :started_on, :economic_headline,
@@ -13,10 +18,12 @@ class Administration < ApplicationRecord
   validates :slug, uniqueness: true
   validates :position, inclusion: { in: POSITIONS.keys }
   validate :end_follows_start
+  validate :accession_structure
 
   def position_label = POSITIONS.fetch(position)
   def period = "#{started_on.year}–#{ended_on&.year || 'atual'}"
   def to_param = slug
+  def accession_method_label = ACCESSION_METHODS.fetch(accession.fetch("method"))
 
   def self.filtered(params)
     records = includes(:president).chronological
@@ -35,6 +42,17 @@ class Administration < ApplicationRecord
   end
 
   private
+
+  def accession_structure
+    return if accession.blank?
+
+    valid = accession.is_a?(Hash) &&
+      ACCESSION_METHODS.key?(accession["method"]) &&
+      accession["summary"].is_a?(String) && accession["summary"].present? &&
+      accession["elections"].is_a?(Array) && accession["elections"].any? &&
+      accession["sources"].is_a?(Array)
+    errors.add(:accession, "deve informar a forma de chegada ao poder, eleições e fontes") unless valid
+  end
 
   def end_follows_start
     errors.add(:ended_on, "deve ser posterior ao início") if ended_on && started_on && ended_on < started_on

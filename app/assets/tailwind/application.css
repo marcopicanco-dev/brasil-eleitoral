@@ -96,6 +96,9 @@
   .art-caption span { display: block; font-size: 6px; color: var(--color-muted); letter-spacing: 2.8px; margin-top: 4px; }
   .stats-grid { @apply grid grid-cols-2 xl:grid-cols-4; gap: 17px; margin-bottom: 24px; }
   .stat-card { padding: 17px 19px; border: 1px solid var(--color-border); border-radius: 7px; background: var(--color-surface); box-shadow: 0 2px 10px rgb(0 39 118 / 3%); border-top: 3px solid var(--color-brasil-green); }
+  .stat-card-link { transition: background .2s, border-color .2s; }
+  .stat-card-link:hover { background: var(--color-green-soft); border-color: var(--color-brasil-green); }
+  .stat-external { width: 11px; height: 11px; margin-left: 6px; color: var(--color-muted); }
   .stat-top { display: flex; justify-content: space-between; gap: 8px; align-items: center; color: var(--color-ink); font-size: 11px; }
   .stat-icon { width: 31px; height: 31px; border-radius: 7px; display: inline-grid; place-items: center; flex-shrink: 0; }
   .stat-icon .icon { width: 16px; height: 16px; }
@@ -214,6 +217,48 @@
   .detail-block { border-top: 1px solid var(--color-border); padding-top: 22px; margin-top: 22px; }
   .detail-block h3 { font-size: 15px; font-weight: 500; color: var(--color-brasil-blue); margin: 5px 0 12px; }
   .detail-block p { color: var(--color-ink); font-size: 12px; line-height: 1.95; }
+  .accession-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+  .accession-heading h3 { margin-top: 5px; }
+  .accession-method { display: inline-flex; align-items: center; gap: 7px; font-size: 10px; color: var(--color-brasil-green-dark); background: var(--color-green-soft); border: 1px solid var(--color-border); border-radius: 5px; padding: 7px 10px; }
+  .accession-method .icon { width: 14px; height: 14px; }
+  .election-card { margin-top: 19px; border: 1px solid var(--color-border); border-radius: 7px; overflow: hidden; }
+  .election-heading { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; padding: 15px 17px; background: var(--color-surface-muted); border-bottom: 1px solid var(--color-border-soft); }
+  .election-heading h4 { font-size: 13px; font-weight: 600; color: var(--color-brasil-blue); margin: 0; }
+  .election-ticket { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; padding: 17px; margin: 0; }
+  .election-ticket dt { color: var(--color-muted); font-size: 9px; margin-bottom: 5px; }
+  .election-ticket dd { color: var(--color-brasil-blue); font-size: 11px; margin: 0; font-weight: 500; }
+  .election-ticket dd span { color: var(--color-muted); white-space: nowrap; font-size: 10px; font-weight: 400; }
+  .election-results { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; padding: 0 17px; }
+  .election-round { min-width: 0; padding: 13px; background: var(--color-surface-muted); border-radius: 5px; }
+  .election-round-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 10px; }
+  .election-round-heading strong { color: var(--color-brasil-blue); font-size: 10px; font-weight: 600; }
+  .election-round-heading time { font-size: 9px; color: var(--color-muted); font-variant-numeric: tabular-nums; }
+  .election-round-heading > div { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; }
+  .round-candidate-count { font-size: 9px; color: var(--color-muted); }
+  .election-candidates { list-style: none; margin: 0; padding: 0; }
+  .election-candidate { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 11px 0; border-top: 1px solid var(--color-border); }
+  .candidate-identity { display: flex; align-items: flex-start; gap: 10px; min-width: 0; }
+  .candidate-rank { min-width: 16px; color: var(--color-muted); font-size: 9px; font-variant-numeric: tabular-nums; padding-top: 2px; }
+  .candidate-name { color: var(--color-ink); font-size: 10px; }
+  .candidate-name small { display: block; color: var(--color-muted); font-size: 9px; margin-top: 2px; }
+  .candidate-status { display: inline-block; color: var(--color-brasil-green-dark); font-size: 8px; font-weight: 550; margin-top: 4px; }
+  .candidate-name .candidate-status-note { color: var(--color-brasil-yellow-ink); font-size: 9px; line-height: 1.6; }
+  .candidate-result { text-align: right; flex-shrink: 0; }
+  .candidate-result strong { font-size: 16px; color: var(--color-brasil-blue); font-weight: 550; font-variant-numeric: tabular-nums; }
+  .candidate-result > span { display: block; color: var(--color-muted); font-size: 9px; font-variant-numeric: tabular-nums; }
+  .ticket-winner .candidate-name, .ticket-winner .candidate-result strong { color: var(--color-brasil-green-dark); }
+  .election-card .election-result-note { font-size: 10px; color: var(--color-muted); padding: 0 17px; margin: 12px 0 17px; }
+  .electoral-alliance { padding: 15px 17px; border-top: 1px solid var(--color-border-soft); }
+  .electoral-alliance h5 { font-size: 12px; font-weight: 550; color: var(--color-brasil-blue); margin: 6px 0 10px; }
+  .alliance-parties { display: flex; flex-wrap: wrap; gap: 6px; }
+  .alliance-parties > span { border: 1px solid var(--color-border); border-radius: 4px; padding: 4px 7px; font-size: 9px; color: var(--color-brasil-blue); background: var(--color-blue-soft); }
+  .electoral-alliance p { font-size: 10px; margin: 11px 0 0; }
+  .election-sources { display: flex; flex-wrap: wrap; gap: 8px 16px; padding: 11px 17px; border-top: 1px solid var(--color-border-soft); }
+  .election-sources a, .accession-sources a { color: var(--color-brasil-green-dark); font-size: 9px; display: inline-flex; align-items: center; gap: 6px; }
+  .election-sources .icon, .accession-sources .icon { width: 11px; height: 11px; }
+  .election-scope-note { display: flex; align-items: flex-start; gap: 9px; }
+  .election-scope-note .icon { width: 14px; height: 14px; margin-top: 3px; }
+  .accession-sources { display: flex; flex-wrap: wrap; gap: 9px 16px; }
   .policy-list { display: grid; gap: 13px; }
   .policy-list > div { border-left: 2px solid var(--color-brasil-green); padding: 10px 15px; background: var(--color-green-soft); }
   .policy-list h4 { color: var(--color-brasil-blue); font-size: 13px; margin: 5px 0; font-weight: 500; }

@@ -1,0 +1,56 @@
+<section class="detail-block accession-section" aria-label="Como chegou ao poder?">
+  <div class="accession-heading">
+    <div><span class="eyebrow">ORIGEM DO MANDATO</span><h3>Como chegou ao poder?</h3></div>
+    <span class="accession-method"><%= icon government.accession.fetch("method") == "succession" ? :timeline : :flag %><%= government.accession_method_label %></span>
+  </div>
+  <p class="accession-summary"><%= government.accession.fetch("summary") %></p>
+  <% government.accession.fetch("elections").each do |election| %>
+    <article class="election-card" data-election-year="<%= election.fetch("year") %>">
+      <div class="election-heading">
+        <h4>Eleição de <%= election.fetch("year") %></h4>
+        <span class="small-tag"><%= election.fetch("kind") == "indirect" ? "Eleição indireta" : election.fetch("rounds").size == 1 ? "Decidida no 1º turno" : "Houve 2º turno" %></span>
+      </div>
+      <dl class="election-ticket">
+        <div><dt>Presidente eleito</dt><dd><%= election.fetch("president") %> <span>(<%= election.fetch("president_party") %>)</span></dd></div>
+        <div><dt>Vice eleito</dt><dd><%= election.fetch("vice") %> <span>(<%= election.fetch("vice_party") %>)</span></dd></div>
+      </dl>
+      <div class="election-results">
+        <% election.fetch("rounds").each do |round| %>
+          <div class="election-round" data-round="<%= round.fetch("number") %>">
+            <div class="election-round-heading">
+              <div><strong><%= election.fetch("kind") == "indirect" ? "Colégio Eleitoral" : "#{round.fetch("number")}º turno" %></strong><span class="round-candidate-count"><%= round.fetch("candidates").size %> candidaturas</span></div>
+              <time datetime="<%= round.fetch("date") %>"><%= l Date.iso8601(round.fetch("date")) %></time>
+            </div>
+            <ol class="election-candidates" aria-label="Todos os candidatos deste turno, em ordem de votação">
+              <% round.fetch("candidates").each_with_index do |candidate, index| %>
+                <li class="election-candidate <%= "ticket-winner" if candidate["elected"] %>">
+                  <div class="candidate-identity">
+                    <span class="candidate-rank" aria-hidden="true"><%= (index + 1).to_s.rjust(2, "0") %></span>
+                    <span class="candidate-name"><%= candidate.fetch("name") %><small><%= candidate.fetch("party") %><%= " · Nº #{candidate["number"]}" if candidate["number"] %></small>
+                      <% if candidate["elected"] %><span class="candidate-status">Eleito</span><% elsif candidate["advanced"] %><span class="candidate-status">Vai ao 2º turno</span><% end %>
+                      <% if candidate["status_note"].present? %><small class="candidate-status-note"><%= candidate.fetch("status_note") %></small><% end %>
+                    </span>
+                  </div>
+                  <span class="candidate-result">
+                    <% if candidate["percentage"] %><strong><%= number_with_precision candidate.fetch("percentage"), precision: 2 %>%</strong><% end %>
+                    <% if candidate["votes"].nil? %><span>Votos não computados</span><% else %><span><%= number_with_delimiter candidate.fetch("votes") %> votos<%= " no Colégio" if election.fetch("kind") == "indirect" %></span><% end %>
+                  </span>
+                </li>
+              <% end %>
+            </ol>
+          </div>
+        <% end %>
+      </div>
+      <p class="election-result-note"><%= election.fetch("result_note") %></p>
+      <div class="electoral-alliance">
+        <span class="eyebrow">ALIANÇA DA CHAPA ELEITA</span>
+        <h5><%= election.fetch("coalition") %></h5>
+        <div class="alliance-parties"><% election.fetch("parties").each do |party| %><span><%= party %></span><% end %></div>
+        <% if election["coalition_note"].present? %><p><%= election.fetch("coalition_note") %></p><% end %>
+      </div>
+      <div class="election-sources"><% election.fetch("sources").each do |source| %><a href="<%= source.fetch("url") %>" target="_blank" rel="noopener"><%= source.fetch("title") %><%= icon :external %></a><% end %></div>
+    </article>
+  <% end %>
+  <p class="election-scope-note"><%= icon :info %><span>As siglas correspondem à época da eleição. A coligação eleitoral e a base parlamentar durante o governo podem ser diferentes.</span></p>
+  <div class="accession-sources"><% government.accession.fetch("sources").each do |source| %><a href="<%= source.fetch("url") %>" target="_blank" rel="noopener"><%= source.fetch("title") %><%= icon :external %></a><% end %></div>
+</section>

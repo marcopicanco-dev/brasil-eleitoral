@@ -1,6 +1,7 @@
 <article class="panel government-detail">
   <div class="profile-top"><span class="avatar avatar-large position-<%= government.position %>"><%= government.president.initials %></span><div><span class="eyebrow"><%= government.period %></span><h2><%= government.label %></h2><span class="party-label"><%= government.party %></span></div></div>
   <div class="profile-badges"><%= position_badge government %><span class="small-tag"><%= l government.started_on %> → <%= government.ended_on ? l(government.ended_on) : "em exercício" %></span></div>
+  <% if government.accession.present? %><%= render "accession", government: government %><% end %>
   <div class="detail-block"><h3>Posicionamento e contexto</h3><p><%= government.political_context %></p></div>
   <div class="detail-block"><span class="eyebrow">AGENDA ECONÔMICA</span><h3><%= government.economic_headline %></h3><p><%= government.economic_policy %></p></div>
   <div class="detail-block"><h3>Políticas públicas em destaque</h3><div class="policy-list"><% government.policies.each do |policy| %><div><span class="policy-area"><%= policy.fetch("area") %></span><h4><%= policy.fetch("name") %></h4><p><%= policy.fetch("description") %></p></div><% end %></div></div>

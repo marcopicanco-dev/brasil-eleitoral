@@ -28,9 +28,11 @@
     ["Presidentes", @president_count.to_s.rjust(2, "0"), "Lideranças que exerceram o cargo", :users, "green"],
     ["Períodos de governo", @timeline.size.to_s.rjust(2, "0"), "Incluindo mandatos consecutivos agrupados", :flag, "blue"],
     ["Início da Nova República", "1985", "Retomada do governo civil", :timeline, "yellow"],
-    ["Constituição cidadã", "1988", "O marco da nossa democracia", :book, "green"]
-  ].each do |label, value, detail, symbol, color| %>
-    <article class="stat-card"><div class="stat-top"><span><%= label %></span><span class="stat-icon <%= color %>"><%= icon symbol %></span></div><strong><%= value %></strong><p><%= detail %></p></article>
+    ["Constituição cidadã", "1988", "O marco da nossa democracia", :book, "green", "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"]
+  ].each do |label, value, detail, symbol, color, url| %>
+    <%= content_tag(url ? :a : :article, class: "stat-card#{" stat-card-link" if url}", href: url, target: ("_blank" if url), rel: ("noopener noreferrer" if url), aria: ({ label: "Ler a Constituição de 1988 no Planalto (abre em nova aba)" } if url)) do %>
+      <div class="stat-top"><span><%= label %><%= icon :external, css: "stat-external" if url %></span><span class="stat-icon <%= color %>"><%= icon symbol %></span></div><strong><%= value %></strong><p><%= detail %></p>
+    <% end %>
   <% end %>
 </div>
 <section id="linha-do-tempo" class="panel timeline-panel">

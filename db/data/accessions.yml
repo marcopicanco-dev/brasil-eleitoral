@@ -1,0 +1,51 @@
+accessions:
+  sarney:
+    method: succession
+    summary: José Sarney foi eleito vice de Tancredo Neves pelo Colégio Eleitoral em 1985, em votação indireta. Como Tancredo adoeceu e não tomou posse, Sarney assumiu o exercício da Presidência em 15 de março. Com a morte de Tancredo em 21 de abril, tornou-se presidente em caráter definitivo. Não houve uma nova eleição para sua posse.
+    election_years: [1985]
+    sources:
+      - { title: Presidência · Posse e sucessão de José Sarney, url: 'https://www.gov.br/secretariageral/pt-br/centrais-de-conteudo/biblioteca-da-pr/galeria-dos-ex-presidentes/jose_sarney/biografia-completa' }
+  collor:
+    method: direct_election
+    summary: Collor chegou à Presidência pela eleição direta de 1989, a primeira para o cargo desde 1960. Disputou pelo PRN, com Itamar Franco como vice na coligação Brasil Novo. Liderou o primeiro turno e derrotou Lula no segundo, tomando posse em 15 de março de 1990.
+    election_years: [1989]
+    sources:
+      - { title: TRE-RJ · Contexto da eleição de 1989, url: 'https://www.tre-rj.jus.br/institucional/memoria/eleicoes-1989' }
+  itamar:
+    method: succession
+    summary: Itamar Franco foi eleito vice-presidente na chapa de Collor em 1989, pelo PRN. Assumiu interinamente a Presidência em 2 de outubro de 1992, com o afastamento de Collor no processo de impeachment, e tornou-se titular em 29 de dezembro, após a renúncia do presidente. Não houve eleição presidencial em 1992; os votos abaixo são da chapa eleita em 1989.
+    election_years: [1989]
+    sources:
+      - { title: Arquivo Nacional · Eleição de Itamar como vice e sucessão, url: 'https://presidentes.an.gov.br/index.php/centro-de-referencia-de-acervos-presidenciais/assuntos/biografias/203-itamar-augusto-cautiero-franco' }
+  fhc:
+    method: direct_election
+    summary: Fernando Henrique Cardoso foi eleito presidente em 1994 e reeleito em 1998, pelo PSDB, com Marco Maciel (PFL) como vice nas duas chapas. As duas vitórias ocorreram no primeiro turno, sem necessidade de segundo turno. A aliança de 1994 reuniu PSDB, PFL e PTB; em 1998, a coligação também incluiu PPB e o PSD da época.
+    election_years: [1994, 1998]
+    sources: []
+  lula-1-2:
+    method: direct_election
+    summary: Lula foi eleito em 2002, pelo PT, derrotando José Serra no segundo turno, e reeleito em 2006, quando venceu Geraldo Alckmin também no segundo turno. José Alencar foi seu vice nas duas eleições, pelo PL em 2002 e pelo PRB em 2006. As coligações mudaram entre um pleito e outro.
+    election_years: [2002, 2006]
+    sources: []
+  dilma:
+    method: direct_election
+    summary: Dilma Rousseff foi eleita presidente em 2010 e reeleita em 2014, pelo PT, com Michel Temer (PMDB) como vice. Nas duas eleições houve segundo turno. Em 2010, derrotou José Serra; em 2014, venceu Aécio Neves. Cada disputa teve uma coligação própria, apresentada abaixo.
+    election_years: [2010, 2014]
+    sources: []
+  temer:
+    method: succession
+    summary: Michel Temer foi eleito vice de Dilma em 2010 e reeleito na mesma chapa em 2014, pelo PMDB. Assumiu interinamente em 12 de maio de 2016, quando Dilma foi afastada, e tornou-se titular após o impeachment, em 31 de agosto. Não houve eleição presidencial em 2016. A origem eleitoral do mandato era a chapa Dilma–Temer de 2014; a base de seu governo mudou após a ruptura com o PT.
+    election_years: [2014]
+    sources:
+      - { title: Senado · Afastamento de Dilma e interinidade de Temer, url: 'https://www12.senado.leg.br/noticias/materias/2016/08/31/a-trajetoria-politica-do-novo-presidente' }
+      - { title: Senado · Posse definitiva de Michel Temer, url: 'https://www12.senado.leg.br/noticias/materias/2016/08/31/michel-temer-toma-posse-na-presidencia-da-republica' }
+  bolsonaro:
+    method: direct_election
+    summary: Jair Bolsonaro foi eleito em 2018 pelo PSL, com Hamilton Mourão (PRTB) como vice. A coligação formal reunia PSL e PRTB. Bolsonaro liderou o primeiro turno e derrotou Fernando Haddad (PT) no segundo. Tomou posse em 1º de janeiro de 2019.
+    election_years: [2018]
+    sources: []
+  lula-3:
+    method: direct_election
+    summary: Lula retornou à Presidência pela eleição de 2022, pelo PT, com Geraldo Alckmin (PSB) como vice. A chapa da coligação Brasil da Esperança liderou o primeiro turno e derrotou Jair Bolsonaro (PL) no segundo. A posse do terceiro mandato ocorreu em 1º de janeiro de 2023.
+    election_years: [2022]
+    sources: []

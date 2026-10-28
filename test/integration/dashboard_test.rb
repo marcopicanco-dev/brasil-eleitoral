@@ -59,6 +59,11 @@ class DashboardTest < ActionDispatch::IntegrationTest
     assert_equal 1, records.size
     assert_equal "Lula · 3º mandato", records.first["Governo"]
     assert_includes records.first["Fontes"], "https://"
+    assert_includes records.first["Como chegou ao poder"], "2022"
+    assert_includes records.first["Resultados eleitorais"], "60345999 votos (50,90%)"
+    assert_includes records.first["Alianças eleitorais"], "Brasil da Esperança"
+    assert_includes records.first["Resultados eleitorais"], "Simone Tebet: 4915423 votos"
+    assert_includes records.first["Resultados eleitorais"], "Constituinte Eymael: 16604 votos"
   end
 
   test "methodology documents exercise dates and editorial classifications" do
@@ -67,5 +72,55 @@ class DashboardTest < ActionDispatch::IntegrationTest
     assert_select "h3", "Datas e transições"
     assert_select ".prose-content", /sínteses editoriais/
     assert_select ".source-link[href*='scielo.br']"
+  end
+
+  test "profiles display election results and formal alliances for every government" do
+    Administration.find_each do |government|
+      get administration_path(government)
+      assert_response :success
+      assert_select ".accession-section h3", "Como chegou ao poder?"
+      assert_select ".election-card", government.accession.fetch("elections").size
+      assert_select ".alliance-parties", government.accession.fetch("elections").size
+      assert_select ".election-sources a"
+    end
+  end
+
+  test "Sarney profile distinguishes the electoral college from popular votes" do
+    get administration_path("sarney")
+    assert_select ".accession-method", /Sucessão pela Vice-Presidência/
+    assert_select ".election-card", /Não houve eleição popular nem segundo turno/
+    assert_select ".candidate-result strong", count: 0
+    assert_select ".candidate-result", /480 votos no Colégio/
+  end
+
+  test "comparison includes separate reelection histories" do
+    get compare_path, params: { left: "fhc", right: "lula-1-2" }
+    assert_select ".accession-section", 2
+    assert_select ".election-card", 4
+    assert_select ".election-heading h4", "Eleição de 1998"
+    assert_select ".election-heading h4", "Eleição de 2006"
+  end
+
+  test "profiles show every first round candidate and only second round finalists" do
+    get administration_path("collor")
+    assert_select ".election-card[data-election-year='1989'] .election-round[data-round='1'] .election-candidate", count: 22
+    assert_select ".election-card[data-election-year='1989'] .election-round[data-round='2'] .election-candidate", count: 2
+    assert_select ".candidate-name", /Leonel Brizola/
+    assert_select ".candidate-name", /Armando Corrêa/
+    get administration_path("lula-3")
+    assert_select ".election-round[data-round='1'] .election-candidate", count: 11
+    assert_select ".election-round[data-round='2'] .election-candidate", count: 2
+    assert_select ".candidate-name", /Simone Tebet/
+    assert_select ".candidate-name", /Constituinte Eymael/
+  end
+
+  test "profile and CSV explain the candidacy with uncomputed votes" do
+    get administration_path("lula-1-2")
+    assert_select ".election-card[data-election-year='2006'] .election-round[data-round='1'] .election-candidate", count: 8
+    assert_select ".candidate-status-note", /indeferida/
+    assert_select ".candidate-result", /Votos não computados/
+    get export_path, params: { q: "Lula", era: "2000" }
+    records = CSV.parse(response.body.delete_prefix("\uFEFF"), col_sep: ";", headers: true)
+    assert_includes records.first["Resultados eleitorais"], "Rui Costa Pimenta: votos não computados"
   end
 end

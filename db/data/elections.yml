@@ -1,0 +1,1172 @@
+---
+elections:
+- year: 1985
+  kind: indirect
+  president: Tancredo Neves
+  president_party: PMDB
+  vice: José Sarney
+  vice_party: PMDB
+  coalition: Aliança Democrática
+  parties:
+  - PMDB
+  - Frente Liberal (dissidência do PDS)
+  coalition_note: A Frente Liberal era uma dissidência do PDS que deu origem ao PFL.
+    A aliança reuniu a oposição do PMDB e dissidentes do partido que sustentava o
+    regime militar.
+  result_note: Não houve eleição popular nem segundo turno. Os votos são dos integrantes
+    do Colégio Eleitoral, não de eleitores em votação direta. Tancredo foi eleito
+    presidente, mas não tomou posse; Sarney foi eleito vice.
+  rounds:
+  - number: 1
+    date: '1985-01-15'
+    candidates:
+    - name: Tancredo Neves
+      party: PMDB
+      votes: 480
+      elected: true
+    - name: Paulo Maluf
+      party: PDS
+      votes: 180
+      elected: false
+  sources:
+  - title: TSE · Eleição indireta de 1985 e Aliança Democrática
+    url: https://www.tse.jus.br/jurisprudencia/julgados-historicos/eleicao-de-1985-fidelidade-partidaria-no-colegio-eleitoral
+  - title: STF · Resultado do Colégio Eleitoral
+    url: https://portal.stf.jus.br/noticias/verNoticiaDetalhe.asp?idConteudo=118798&ori=1
+- year: 1989
+  kind: direct
+  president: Fernando Collor de Mello
+  president_party: PRN
+  vice: Itamar Franco
+  vice_party: PRN
+  coalition: Brasil Novo
+  parties:
+  - PRN
+  - PTR
+  - PSC
+  - PST
+  coalition_note: A composição corresponde à coligação eleitoral da chapa Collor–Itamar.
+    Ela não representa automaticamente os partidos da base de Itamar após a sucessão
+    em 1992.
+  result_note: Collor venceu Lula no segundo turno. A lista inclui todos os registros
+    presidenciais do arquivo histórico, identificando a candidatura inapta de Armando
+    Corrêa. Os percentuais usam a soma dos votos nominais válidos da mesma base, incluindo
+    o exterior.
+  rounds:
+  - number: 1
+    date: '1989-11-15'
+    valid_votes: 67625886
+    candidates:
+    - name: Fernando Collor
+      party: PRN
+      number: 20
+      votes: 20611030
+      percentage: 30.48
+      elected: false
+      advanced: true
+    - name: Lula
+      party: PT
+      number: 13
+      votes: 11622321
+      percentage: 17.19
+      elected: false
+      advanced: true
+    - name: Leonel Brizola
+      party: PDT
+      number: 12
+      votes: 11167665
+      percentage: 16.51
+      elected: false
+      advanced: false
+    - name: Mário Covas
+      party: PSDB
+      number: 45
+      votes: 7790381
+      percentage: 11.52
+      elected: false
+      advanced: false
+    - name: Paulo Maluf
+      party: PDS
+      number: 11
+      votes: 5986585
+      percentage: 8.85
+      elected: false
+      advanced: false
+    - name: Guilherme Afif Domingos
+      party: PL
+      number: 22
+      votes: 3272520
+      percentage: 4.84
+      elected: false
+      advanced: false
+    - name: Ulysses Guimarães
+      party: PMDB
+      number: 15
+      votes: 3204996
+      percentage: 4.74
+      elected: false
+      advanced: false
+    - name: Roberto Freire
+      party: PCB
+      number: 23
+      votes: 769117
+      percentage: 1.14
+      elected: false
+      advanced: false
+    - name: Aureliano Chaves
+      party: PFL
+      number: 25
+      votes: 600821
+      percentage: 0.89
+      elected: false
+      advanced: false
+    - name: Ronaldo Caiado
+      party: PSD
+      number: 51
+      votes: 488893
+      percentage: 0.72
+      elected: false
+      advanced: false
+    - name: Affonso Camargo
+      party: PTB
+      number: 14
+      votes: 379284
+      percentage: 0.56
+      elected: false
+      advanced: false
+    - name: Enéas Carneiro
+      party: PRONA
+      number: 56
+      votes: 360578
+      percentage: 0.53
+      elected: false
+      advanced: false
+    - name: Marronzinho
+      party: PSP
+      number: 42
+      votes: 238408
+      percentage: 0.35
+      elected: false
+      advanced: false
+    - name: Paulo Gontijo
+      party: PP
+      number: 54
+      votes: 198710
+      percentage: 0.29
+      elected: false
+      advanced: false
+    - name: Zamir José Teixeira
+      party: PCN
+      number: 31
+      votes: 187164
+      percentage: 0.28
+      elected: false
+      advanced: false
+    - name: Lívia Maria
+      party: PN
+      number: 27
+      votes: 179925
+      percentage: 0.27
+      elected: false
+      advanced: false
+    - name: Eudes Mattar
+      party: PLP
+      number: 55
+      votes: 162343
+      percentage: 0.24
+      elected: false
+      advanced: false
+    - name: Fernando Gabeira
+      party: PV
+      number: 43
+      votes: 125844
+      percentage: 0.19
+      elected: false
+      advanced: false
+    - name: Celso Brant
+      party: PMN
+      number: 33
+      votes: 109903
+      percentage: 0.16
+      elected: false
+      advanced: false
+    - name: Antônio Pedreira
+      party: PPB
+      number: 16
+      votes: 86107
+      percentage: 0.13
+      elected: false
+      advanced: false
+    - name: Manoel Horta
+      party: PDCdoB
+      number: 57
+      votes: 83291
+      percentage: 0.12
+      elected: false
+      advanced: false
+    - name: Armando Corrêa
+      party: PMB
+      number: 26
+      votes: 0
+      percentage:
+      elected: false
+      advanced: false
+      status_note: Registro inapto na base histórica; sem votos computados.
+  - number: 2
+    date: '1989-12-17'
+    valid_votes: 66166009
+    candidates:
+    - name: Fernando Collor
+      party: PRN
+      number: 20
+      votes: 35090206
+      percentage: 53.03
+      elected: true
+      advanced: false
+    - name: Lula
+      party: PT
+      number: 13
+      votes: 31075803
+      percentage: 46.97
+      elected: false
+      advanced: false
+  sources:
+  - title: TSE · Resultados de 1989 (SISTOT)
+    url: https://dadosabertos.tse.jus.br/dataset/resultados-1989
+  - title: TRE-SC · Coligação Brasil Novo
+    url: https://apps.tre-sc.jus.br/site/fileadmin/arquivos/eleicoes/histeleiweb/19892/ResultFinalE19892presidencial.htm
+  results_source:
+    url: https://dadosabertos.tse.jus.br/dataset/resultados-1989
+    file: VOTACAO_CANDIDATO_UF_1989.txt
+    generated_on: '2012-11-05'
+- year: 1994
+  kind: direct
+  president: Fernando Henrique Cardoso
+  president_party: PSDB
+  vice: Marco Maciel
+  vice_party: PFL
+  coalition: União, Trabalho e Progresso
+  parties:
+  - PSDB
+  - PFL
+  - PTB
+  result_note: FHC foi eleito no primeiro turno; não houve segundo turno presidencial.
+    A totalização histórica consultada contém os oito candidatos e os votos das 27
+    UFs, sem a votação no exterior. Os percentuais usam esse mesmo recorte.
+  rounds:
+  - number: 1
+    date: '1994-10-03'
+    valid_votes: 63285633
+    candidates:
+    - name: Fernando Henrique Cardoso
+      party: PSDB
+      number: 45
+      votes: 34350217
+      percentage: 54.28
+      elected: true
+      advanced: false
+    - name: Lula
+      party: PT
+      number: 13
+      votes: 17112255
+      percentage: 27.04
+      elected: false
+      advanced: false
+    - name: Enéas Carneiro
+      party: PRONA
+      number: 56
+      votes: 4670894
+      percentage: 7.38
+      elected: false
+      advanced: false
+    - name: Orestes Quércia
+      party: PMDB
+      number: 15
+      votes: 2771788
+      percentage: 4.38
+      elected: false
+      advanced: false
+    - name: Leonel Brizola
+      party: PDT
+      number: 12
+      votes: 2015284
+      percentage: 3.18
+      elected: false
+      advanced: false
+    - name: Esperidião Amin
+      party: PPR
+      number: 11
+      votes: 1739458
+      percentage: 2.75
+      elected: false
+      advanced: false
+    - name: Carlos Antônio Gomes
+      party: PRN
+      number: 36
+      votes: 387611
+      percentage: 0.61
+      elected: false
+      advanced: false
+    - name: Hernani Fortuna
+      party: PSC
+      number: 20
+      votes: 238126
+      percentage: 0.38
+      elected: false
+      advanced: false
+  sources:
+  - title: TSE · Lista completa de candidatos e votação de 1994
+    url: https://dadosabertos.tse.jus.br/dataset/resultados-1994
+  - title: TRE-SC · Coligações de 1994
+    url: https://apps.tre-sc.jus.br/site/fileadmin/arquivos/eleicoes/histeleiweb/1994/ResultFinalE1994presidencial.htm
+  results_source:
+    url: https://dadosabertos.tse.jus.br/dataset/resultados-1994
+    file: votacao_candidato_munzona_1994_BR.csv
+    generated_on: '2026-02-13'
+- year: 1998
+  kind: direct
+  president: Fernando Henrique Cardoso
+  president_party: PSDB
+  vice: Marco Maciel
+  vice_party: PFL
+  coalition: União, Trabalho e Progresso
+  parties:
+  - PSDB
+  - PFL
+  - PPB
+  - PSD
+  - PTB
+  coalition_note: O PSD desta eleição era uma legenda que foi incorporada ao PTB em
+    2003; não é o PSD fundado em 2011. PPB era a sigla então usada pelo atual PP.
+  result_note: FHC e Marco Maciel foram reeleitos no primeiro turno; não houve segundo
+    turno presidencial. Todos os candidatos da totalização consultada estão listados.
+    Os percentuais são calculados sobre os votos nominais válidos.
+  rounds:
+  - number: 1
+    date: '1998-10-04'
+    valid_votes: 67722475
+    candidates:
+    - name: Fernando Henrique Cardoso
+      party: PSDB
+      number: 45
+      votes: 35936540
+      percentage: 53.06
+      elected: true
+      advanced: false
+    - name: Lula
+      party: PT
+      number: 13
+      votes: 21475218
+      percentage: 31.71
+      elected: false
+      advanced: false
+    - name: Ciro Gomes
+      party: PPS
+      number: 23
+      votes: 7426190
+      percentage: 10.97
+      elected: false
+      advanced: false
+    - name: Enéas Carneiro
+      party: PRONA
+      number: 56
+      votes: 1447090
+      percentage: 2.14
+      elected: false
+      advanced: false
+    - name: Ivan Moacyr da Frota
+      party: PMN
+      number: 33
+      votes: 251337
+      percentage: 0.37
+      elected: false
+      advanced: false
+    - name: Alfredo Sirkis
+      party: PV
+      number: 43
+      votes: 212984
+      percentage: 0.31
+      elected: false
+      advanced: false
+    - name: José Maria de Almeida
+      party: PSTU
+      number: 16
+      votes: 202659
+      percentage: 0.3
+      elected: false
+      advanced: false
+    - name: João de Deus Barbosa de Jesus
+      party: PTdoB
+      number: 70
+      votes: 198916
+      percentage: 0.29
+      elected: false
+      advanced: false
+    - name: José Maria Eymael
+      party: PSDC
+      number: 27
+      votes: 171831
+      percentage: 0.25
+      elected: false
+      advanced: false
+    - name: Thereza Tinajero Ruiz
+      party: PTN
+      number: 19
+      votes: 166138
+      percentage: 0.25
+      elected: false
+      advanced: false
+    - name: Sergio Bueno
+      party: PSC
+      number: 20
+      votes: 124569
+      percentage: 0.18
+      elected: false
+      advanced: false
+    - name: Vasco Azevedo Neto
+      party: PSN
+      number: 31
+      votes: 109003
+      percentage: 0.16
+      elected: false
+      advanced: false
+  sources:
+  - title: TRE-SC · Resultado final e coligações de 1998
+    url: https://apps.tre-sc.jus.br/site/fileadmin/arquivos/eleicoes/histeleiweb/1998/ResultFinalE1998presidencial.htm
+  - title: TSE · Histórico de siglas e incorporações
+    url: https://www.tse.jus.br/partidos/partidos-politicos/partidos-registrados-no-tse
+  results_source:
+    url: https://apps.tre-sc.jus.br/site/fileadmin/arquivos/eleicoes/histeleiweb/1998/ResultFinalE1998presidencial.htm
+    file: ResultFinalE1998presidencial.htm
+    generated_on: '2001-08-07'
+- year: 2002
+  kind: direct
+  president: Luiz Inácio Lula da Silva
+  president_party: PT
+  vice: José Alencar
+  vice_party: PL
+  coalition: Lula Presidente
+  parties:
+  - PT
+  - PL
+  - PCdoB
+  - PMN
+  - PCB
+  coalition_note: O PL que integrou esta chapa era o Partido Liberal da época. Não
+    se deve confundir essa aliança de 2002 com o alinhamento político posterior da
+    sigla.
+  result_note: Lula venceu José Serra no segundo turno. Todos os candidatos de cada
+    turno estão listados, em ordem de votação. Percentuais calculados sobre os votos
+    válidos da mesma totalização, excluindo brancos e nulos.
+  rounds:
+  - number: 1
+    date: '2002-10-06'
+    valid_votes: 84952512
+    candidates:
+    - name: Lula
+      party: PT
+      number: 13
+      votes: 39455233
+      percentage: 46.44
+      elected: false
+      advanced: true
+    - name: José Serra
+      party: PSDB
+      number: 45
+      votes: 19705445
+      percentage: 23.2
+      elected: false
+      advanced: true
+    - name: Garotinho
+      party: PSB
+      number: 40
+      votes: 15180097
+      percentage: 17.87
+      elected: false
+      advanced: false
+    - name: Ciro Gomes
+      party: PPS
+      number: 23
+      votes: 10170882
+      percentage: 11.97
+      elected: false
+      advanced: false
+    - name: Zé Maria
+      party: PSTU
+      number: 16
+      votes: 402236
+      percentage: 0.47
+      elected: false
+      advanced: false
+    - name: Rui Costa Pimenta
+      party: PCO
+      number: 29
+      votes: 38619
+      percentage: 0.05
+      elected: false
+      advanced: false
+  - number: 2
+    date: '2002-10-27'
+    valid_votes: 86164103
+    candidates:
+    - name: Lula
+      party: PT
+      number: 13
+      votes: 52793364
+      percentage: 61.27
+      elected: true
+      advanced: false
+    - name: José Serra
+      party: PSDB
+      number: 45
+      votes: 33370739
+      percentage: 38.73
+      elected: false
+      advanced: false
+  sources:
+  - title: TSE · Lista completa de candidatos e votação de 2002
+    url: https://dadosabertos.tse.jus.br/dataset/resultados-2002
+  - title: TRE-SC · Resultado e coligações do 1º turno de 2002
+    url: https://apps.tre-sc.jus.br/site/fileadmin/arquivos/eleicoes/histeleiweb/2002/ResultFinalE2002presidencial.htm
+  - title: TRE-SC · Resultado final de 2002
+    url: https://apps.tre-sc.jus.br/site/fileadmin/arquivos/eleicoes/histeleiweb/20022/ResultFinalE20022presidencial.htm
+  results_source:
+    url: https://dadosabertos.tse.jus.br/dataset/resultados-2002
+    file: votacao_candidato_munzona_2002_BR.csv
+    generated_on: '2022-03-18'
+- year: 2006
+  kind: direct
+  president: Luiz Inácio Lula da Silva
+  president_party: PT
+  vice: José Alencar
+  vice_party: PRB
+  coalition: A Força do Povo
+  parties:
+  - PT
+  - PRB
+  - PCdoB
+  result_note: Lula e José Alencar foram reeleitos no segundo turno. Além dos sete
+    candidatos com votos computados no primeiro turno, a lista identifica Rui Costa
+    Pimenta, cujo registro foi indeferido e cuja votação não integra a totalização
+    consultada.
+  rounds:
+  - number: 1
+    date: '2006-10-01'
+    valid_votes: 95996733
+    candidates:
+    - name: Lula
+      party: PT
+      number: 13
+      votes: 46662365
+      percentage: 48.61
+      elected: false
+      advanced: true
+    - name: Geraldo Alckmin
+      party: PSDB
+      number: 45
+      votes: 39968369
+      percentage: 41.64
+      elected: false
+      advanced: true
+    - name: Heloísa Helena
+      party: PSOL
+      number: 50
+      votes: 6575393
+      percentage: 6.85
+      elected: false
+      advanced: false
+    - name: Cristovam Buarque
+      party: PDT
+      number: 12
+      votes: 2538844
+      percentage: 2.64
+      elected: false
+      advanced: false
+    - name: Ana Maria Rangel
+      party: PRP
+      number: 44
+      votes: 126404
+      percentage: 0.13
+      elected: false
+      advanced: false
+    - name: José Maria Eymael
+      party: PSDC
+      number: 27
+      votes: 63294
+      percentage: 0.07
+      elected: false
+      advanced: false
+    - name: Luciano Bivar
+      party: PSL
+      number: 17
+      votes: 62064
+      percentage: 0.06
+      elected: false
+      advanced: false
+    - name: Rui Costa Pimenta
+      party: PCO
+      number: 29
+      votes:
+      elected: false
+      advanced: false
+      status_note: Candidatura indeferida; votos não computados na totalização.
+  - number: 2
+    date: '2006-10-29'
+    valid_votes: 95838220
+    candidates:
+    - name: Lula
+      party: PT
+      number: 13
+      votes: 58295042
+      percentage: 60.83
+      elected: true
+      advanced: false
+    - name: Geraldo Alckmin
+      party: PSDB
+      number: 45
+      votes: 37543178
+      percentage: 39.17
+      elected: false
+      advanced: false
+  sources:
+  - title: TSE · Lista completa de candidatos e votação de 2006
+    url: https://dadosabertos.tse.jus.br/dataset/resultados-2006
+  - title: TRE-GO · Resultado final do 1º turno de 2006
+    url: https://apps.tre-go.jus.br/internet/eleicoes/2006/resultado/1_turno/nacional.html
+  - title: TRE-SC · Resultado final e coligação de 2006
+    url: https://apps.tre-sc.jus.br/site/fileadmin/arquivos/eleicoes/histeleiweb/20062/ResultFinalE20062presidencial.htm
+  - title: TSE · Registro de candidaturas de 2006
+    url: https://dadosabertos.tse.jus.br/dataset/candidatos-2006
+  results_source:
+    url: https://dadosabertos.tse.jus.br/dataset/resultados-2006
+    file: votacao_candidato_munzona_2006_BR.csv
+    generated_on: '2022-05-13'
+- year: 2010
+  kind: direct
+  president: Dilma Rousseff
+  president_party: PT
+  vice: Michel Temer
+  vice_party: PMDB
+  coalition: Para o Brasil Seguir Mudando
+  parties:
+  - PT
+  - PMDB
+  - PCdoB
+  - PDT
+  - PRB
+  - PR
+  - PSC
+  - PSB
+  - PTC
+  - PTN
+  result_note: Dilma venceu José Serra no segundo turno, com Michel Temer como vice.
+    Todos os candidatos de cada turno estão listados. Percentuais calculados sobre
+    os votos nominais válidos da mesma totalização.
+  rounds:
+  - number: 1
+    date: '2010-10-03'
+    valid_votes: 101590153
+    candidates:
+    - name: Dilma Rousseff
+      party: PT
+      number: 13
+      votes: 47651434
+      percentage: 46.91
+      elected: false
+      advanced: true
+    - name: José Serra
+      party: PSDB
+      number: 45
+      votes: 33132283
+      percentage: 32.61
+      elected: false
+      advanced: true
+    - name: Marina Silva
+      party: PV
+      number: 43
+      votes: 19636359
+      percentage: 19.33
+      elected: false
+      advanced: false
+    - name: Plínio de Arruda Sampaio
+      party: PSOL
+      number: 50
+      votes: 886816
+      percentage: 0.87
+      elected: false
+      advanced: false
+    - name: José Maria Eymael
+      party: PSDC
+      number: 27
+      votes: 89350
+      percentage: 0.09
+      elected: false
+      advanced: false
+    - name: Zé Maria
+      party: PSTU
+      number: 16
+      votes: 84609
+      percentage: 0.08
+      elected: false
+      advanced: false
+    - name: Levy Fidelix
+      party: PRTB
+      number: 28
+      votes: 57960
+      percentage: 0.06
+      elected: false
+      advanced: false
+    - name: Ivan Pinheiro
+      party: PCB
+      number: 21
+      votes: 39136
+      percentage: 0.04
+      elected: false
+      advanced: false
+    - name: Rui Costa Pimenta
+      party: PCO
+      number: 29
+      votes: 12206
+      percentage: 0.01
+      elected: false
+      advanced: false
+  - number: 2
+    date: '2010-10-31'
+    valid_votes: 99463917
+    candidates:
+    - name: Dilma Rousseff
+      party: PT
+      number: 13
+      votes: 55752529
+      percentage: 56.05
+      elected: true
+      advanced: false
+    - name: José Serra
+      party: PSDB
+      number: 45
+      votes: 43711388
+      percentage: 43.95
+      elected: false
+      advanced: false
+  sources:
+  - title: TSE · Lista completa de candidatos e votação de 2010
+    url: https://dadosabertos.tse.jus.br/dataset/resultados-2010
+  - title: TRE-SC · Resultado e coligações do 1º turno de 2010
+    url: https://apps.tre-sc.jus.br/site/fileadmin/arquivos/eleicoes/histeleiweb/2010/ResultFinalE2010presidencial.htm
+  - title: TRE-SC · Resultado final de 2010
+    url: https://apps.tre-sc.jus.br/site/fileadmin/arquivos/eleicoes/histeleiweb/20102/ResultFinalE20102presidencial.htm
+  results_source:
+    url: https://dadosabertos.tse.jus.br/dataset/resultados-2010
+    file: votacao_candidato_munzona_2010_BR.csv
+    generated_on: '2021-07-19'
+- year: 2014
+  kind: direct
+  president: Dilma Rousseff
+  president_party: PT
+  vice: Michel Temer
+  vice_party: PMDB
+  coalition: Com a Força do Povo
+  parties:
+  - PT
+  - PMDB
+  - PSD
+  - PP
+  - PR
+  - PROS
+  - PDT
+  - PCdoB
+  - PRB
+  coalition_note: Esta é a aliança eleitoral da reeleição da chapa Dilma–Temer. A
+    base política de Temer após a sucessão em 2016 não deve ser confundida com esta
+    coligação de 2014.
+  result_note: Dilma e Temer foram reeleitos ao vencer a chapa de Aécio Neves no segundo
+    turno. Todos os candidatos de cada turno estão listados. Percentuais calculados
+    sobre os votos válidos da mesma totalização.
+  rounds:
+  - number: 1
+    date: '2014-10-05'
+    valid_votes: 104023802
+    candidates:
+    - name: Dilma Rousseff
+      party: PT
+      number: 13
+      votes: 43267668
+      percentage: 41.59
+      elected: false
+      advanced: true
+    - name: Aécio Neves
+      party: PSDB
+      number: 45
+      votes: 34897211
+      percentage: 33.55
+      elected: false
+      advanced: true
+    - name: Marina Silva
+      party: PSB
+      number: 40
+      votes: 22176619
+      percentage: 21.32
+      elected: false
+      advanced: false
+    - name: Luciana Genro
+      party: PSOL
+      number: 50
+      votes: 1612186
+      percentage: 1.55
+      elected: false
+      advanced: false
+    - name: Pastor Everaldo
+      party: PSC
+      number: 20
+      votes: 780513
+      percentage: 0.75
+      elected: false
+      advanced: false
+    - name: Eduardo Jorge
+      party: PV
+      number: 43
+      votes: 630099
+      percentage: 0.61
+      elected: false
+      advanced: false
+    - name: Levy Fidelix
+      party: PRTB
+      number: 28
+      votes: 446878
+      percentage: 0.43
+      elected: false
+      advanced: false
+    - name: Zé Maria
+      party: PSTU
+      number: 16
+      votes: 91209
+      percentage: 0.09
+      elected: false
+      advanced: false
+    - name: José Maria Eymael
+      party: PSDC
+      number: 27
+      votes: 61250
+      percentage: 0.06
+      elected: false
+      advanced: false
+    - name: Mauro Iasi
+      party: PCB
+      number: 21
+      votes: 47845
+      percentage: 0.05
+      elected: false
+      advanced: false
+    - name: Rui Costa Pimenta
+      party: PCO
+      number: 29
+      votes: 12324
+      percentage: 0.01
+      elected: false
+      advanced: false
+  - number: 2
+    date: '2014-10-26'
+    valid_votes: 105542273
+    candidates:
+    - name: Dilma Rousseff
+      party: PT
+      number: 13
+      votes: 54501118
+      percentage: 51.64
+      elected: true
+      advanced: false
+    - name: Aécio Neves
+      party: PSDB
+      number: 45
+      votes: 51041155
+      percentage: 48.36
+      elected: false
+      advanced: false
+  sources:
+  - title: TSE · Lista completa de candidatos e votação de 2014
+    url: https://dadosabertos.tse.jus.br/dataset/resultados-2014
+  - title: TSE · Proclamação do 1º turno de 2014
+    url: https://www.tse.jus.br/comunicacao/noticias/2014/Outubro/presidente-do-tse-proclama-resultado-provisorio-das-eleicoes-para-presidente-da-republica
+  - title: TSE · Resultado definitivo de 2014
+    url: https://www.tse.jus.br/comunicacao/noticias/2014/Dezembro/plenario-do-tse-proclama-resultado-definitivo-do-segundo-turno-da-eleicao-presidencial
+  - title: TSE · Coligações da campanha presidencial de 2014
+    url: https://www.tse.jus.br/eleicoes/eleicoes-anteriores/eleicoes-2014/imprensa/midias-da-campanha-presidencial
+  results_source:
+    url: https://dadosabertos.tse.jus.br/dataset/resultados-2014
+    file: votacao_candidato_munzona_2014_BR.csv
+    generated_on: '2021-07-28'
+- year: 2018
+  kind: direct
+  president: Jair Bolsonaro
+  president_party: PSL
+  vice: Hamilton Mourão
+  vice_party: PRTB
+  coalition: Brasil Acima de Tudo, Deus Acima de Todos
+  parties:
+  - PSL
+  - PRTB
+  result_note: Bolsonaro venceu Fernando Haddad no segundo turno. Todos os candidatos
+    de cada turno estão listados. Votos e percentuais usam a base de resultados do
+    TSE indicada abaixo, sem misturar consolidações de datas diferentes.
+  rounds:
+  - number: 1
+    date: '2018-10-07'
+    valid_votes: 107050749
+    candidates:
+    - name: Jair Bolsonaro
+      party: PSL
+      number: 17
+      votes: 49277010
+      percentage: 46.03
+      elected: false
+      advanced: true
+    - name: Fernando Haddad
+      party: PT
+      number: 13
+      votes: 31342051
+      percentage: 29.28
+      elected: false
+      advanced: true
+    - name: Ciro Gomes
+      party: PDT
+      number: 12
+      votes: 13344371
+      percentage: 12.47
+      elected: false
+      advanced: false
+    - name: Geraldo Alckmin
+      party: PSDB
+      number: 45
+      votes: 5096350
+      percentage: 4.76
+      elected: false
+      advanced: false
+    - name: João Amoêdo
+      party: NOVO
+      number: 30
+      votes: 2679745
+      percentage: 2.5
+      elected: false
+      advanced: false
+    - name: Cabo Daciolo
+      party: PATRI
+      number: 51
+      votes: 1348323
+      percentage: 1.26
+      elected: false
+      advanced: false
+    - name: Henrique Meirelles
+      party: MDB
+      number: 15
+      votes: 1288950
+      percentage: 1.2
+      elected: false
+      advanced: false
+    - name: Marina Silva
+      party: REDE
+      number: 18
+      votes: 1069578
+      percentage: 1.0
+      elected: false
+      advanced: false
+    - name: Álvaro Dias
+      party: PODE
+      number: 19
+      votes: 859601
+      percentage: 0.8
+      elected: false
+      advanced: false
+    - name: Guilherme Boulos
+      party: PSOL
+      number: 50
+      votes: 617122
+      percentage: 0.58
+      elected: false
+      advanced: false
+    - name: Vera Lúcia
+      party: PSTU
+      number: 16
+      votes: 55762
+      percentage: 0.05
+      elected: false
+      advanced: false
+    - name: José Maria Eymael
+      party: DC
+      number: 27
+      votes: 41710
+      percentage: 0.04
+      elected: false
+      advanced: false
+    - name: João Goulart Filho
+      party: PPL
+      number: 54
+      votes: 30176
+      percentage: 0.03
+      elected: false
+      advanced: false
+  - number: 2
+    date: '2018-10-28'
+    valid_votes: 104838753
+    candidates:
+    - name: Jair Bolsonaro
+      party: PSL
+      number: 17
+      votes: 57797847
+      percentage: 55.13
+      elected: true
+      advanced: false
+    - name: Fernando Haddad
+      party: PT
+      number: 13
+      votes: 47040906
+      percentage: 44.87
+      elected: false
+      advanced: false
+  sources:
+  - title: TSE · Lista completa de candidatos e votação de 2018
+    url: https://dadosabertos.tse.jus.br/dataset/resultados-2018
+  - title: Correio Braziliense · Totalização consolidada divulgada pelo TSE
+    url: https://www.correiobraziliense.com.br/app/noticia/politica/2018/10/29/interna_politica,716217/tse-divulga-resultados-consolidados-das-eleicoes-presidenciais-de-2018.shtml
+  - title: TSE · Coligação PSL–PRTB
+    url: https://www.tse.jus.br/legislacao/compilada/res/2018/resolucao-no-23-590-de-28-de-agosto-de-2018
+  results_source:
+    url: https://dadosabertos.tse.jus.br/dataset/resultados-2018
+    file: votacao_candidato_munzona_2018_BR.csv
+    generated_on: '2024-11-13'
+- year: 2022
+  kind: direct
+  president: Luiz Inácio Lula da Silva
+  president_party: PT
+  vice: Geraldo Alckmin
+  vice_party: PSB
+  coalition: Brasil da Esperança
+  parties:
+  - PT
+  - PCdoB
+  - PV
+  - PSOL
+  - REDE
+  - PSB
+  - Solidariedade
+  - Avante
+  - Agir
+  - PROS
+  coalition_note: PT, PCdoB e PV integravam a Federação Brasil da Esperança; PSOL
+    e REDE integravam outra federação. O PROS aderiu à coligação com deferimento do
+    TSE em setembro de 2022.
+  result_note: Lula venceu Jair Bolsonaro no segundo turno, com Geraldo Alckmin como
+    vice. Todos os candidatos de cada turno estão listados. Percentuais calculados
+    sobre os votos válidos da mesma totalização.
+  rounds:
+  - number: 1
+    date: '2022-10-02'
+    valid_votes: 118229719
+    candidates:
+    - name: Lula
+      party: PT
+      number: 13
+      votes: 57259504
+      percentage: 48.43
+      elected: false
+      advanced: true
+    - name: Jair Bolsonaro
+      party: PL
+      number: 22
+      votes: 51072345
+      percentage: 43.2
+      elected: false
+      advanced: true
+    - name: Simone Tebet
+      party: MDB
+      number: 15
+      votes: 4915423
+      percentage: 4.16
+      elected: false
+      advanced: false
+    - name: Ciro Gomes
+      party: PDT
+      number: 12
+      votes: 3599287
+      percentage: 3.04
+      elected: false
+      advanced: false
+    - name: Soraya Thronicke
+      party: UNIÃO
+      number: 44
+      votes: 600955
+      percentage: 0.51
+      elected: false
+      advanced: false
+    - name: Felipe d’Avila
+      party: NOVO
+      number: 30
+      votes: 559708
+      percentage: 0.47
+      elected: false
+      advanced: false
+    - name: Padre Kelmon
+      party: PTB
+      number: 14
+      votes: 81129
+      percentage: 0.07
+      elected: false
+      advanced: false
+    - name: Léo Péricles
+      party: UP
+      number: 80
+      votes: 53519
+      percentage: 0.05
+      elected: false
+      advanced: false
+    - name: Sofia Manzano
+      party: PCB
+      number: 21
+      votes: 45620
+      percentage: 0.04
+      elected: false
+      advanced: false
+    - name: Vera Lúcia
+      party: PSTU
+      number: 16
+      votes: 25625
+      percentage: 0.02
+      elected: false
+      advanced: false
+    - name: Constituinte Eymael
+      party: DC
+      number: 27
+      votes: 16604
+      percentage: 0.01
+      elected: false
+      advanced: false
+  - number: 2
+    date: '2022-10-30'
+    valid_votes: 118552353
+    candidates:
+    - name: Lula
+      party: PT
+      number: 13
+      votes: 60345999
+      percentage: 50.9
+      elected: true
+      advanced: false
+    - name: Jair Bolsonaro
+      party: PL
+      number: 22
+      votes: 58206354
+      percentage: 49.1
+      elected: false
+      advanced: false
+  sources:
+  - title: TSE · Lista completa de candidatos e votação de 2022
+    url: https://dadosabertos.tse.jus.br/dataset/resultados-2022
+  - title: TSE · Totalização do 1º turno de 2022
+    url: https://www.tse.jus.br/comunicacao/noticias/2022/Outubro/100-das-secoes-totalizadas-confira-como-ficou-o-quadro-eleitoral-apos-o-1o-turno
+  - title: TSE · Proclamação de Lula e Alckmin eleitos
+    url: https://www.tse.jus.br/comunicacao/noticias/2022/Dezembro/tse-proclama-eleitos-presidente-e-vice-presidente-da-republica-luiz-inacio-lula-da-silva-e-geraldo-alckmin
+  - title: TSE · Composição da coligação e adesão do PROS
+    url: https://www.tse.jus.br/comunicacao/noticias/2022/Setembro/tse-homologa-cancelamento-de-convencao-do-pros-e-defere-adesao-da-legenda-a-coligacao-brasil-da-esperanca-56589/
+  results_source:
+    url: https://dadosabertos.tse.jus.br/dataset/resultados-2022
+    file: votacao_candidato_munzona_2022_BR.csv
+    generated_on: '2026-10-28'
