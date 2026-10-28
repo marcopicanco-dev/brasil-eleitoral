@@ -1,0 +1,7 @@
+<div class="page-heading">
+  <div><div class="eyebrow">OBSERVATÓRIO DA NOVA REPÚBLICA</div><h1><%= title %></h1><p><%= subtitle %></p></div>
+  <div class="heading-actions">
+    <%= link_to export_path(request.query_parameters.slice("q", "position", "era")), class: "button button-secondary", data: { turbo: false } do %><%= icon :download %> Exportar dados<% end %>
+    <%= link_to compare_path, class: "button button-primary" do %><%= icon :compare %> Comparar governos<% end %>
+  </div>
+</div>

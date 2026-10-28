@@ -1,0 +1,6 @@
+<% content_for :title, @administration.label %>
+<%= render "heading", title: @administration.label, subtitle: "Um olhar sobre o contexto político, a economia e as políticas públicas." %>
+<div class="profile-grid">
+  <%= render "government_detail", government: @administration %>
+  <aside class="panel related-governments"><span class="eyebrow">CONTINUE EXPLORANDO</span><h2>Outros governos</h2><% @timeline.reject { |government| government == @administration }.each do |government| %><%= link_to administration_path(government), class: "related-government" do %><span class="avatar position-<%= government.position %>"><%= government.president.initials %></span><span><strong><%= government.label %></strong><small><%= government.period %></small></span><%= icon :chevron %><% end %><% end %><%= link_to compare_path(left: @administration.slug), class: "button button-primary w-full mt-6" do %><%= icon :compare %> Comparar este governo<% end %></aside>
+</div>

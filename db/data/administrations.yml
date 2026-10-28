@@ -1,0 +1,223 @@
+presidents:
+  - { slug: sarney, name: José Sarney, short_name: Sarney, initials: JS }
+  - { slug: collor, name: Fernando Collor de Mello, short_name: Collor, initials: FC }
+  - { slug: itamar, name: Itamar Franco, short_name: Itamar Franco, initials: IF }
+  - { slug: fhc, name: Fernando Henrique Cardoso, short_name: FHC, initials: FH }
+  - { slug: lula, name: Luiz Inácio Lula da Silva, short_name: Lula, initials: LS }
+  - { slug: dilma, name: Dilma Rousseff, short_name: Dilma Rousseff, initials: DR }
+  - { slug: temer, name: Michel Temer, short_name: Michel Temer, initials: MT }
+  - { slug: bolsonaro, name: Jair Bolsonaro, short_name: Jair Bolsonaro, initials: JB }
+
+administrations:
+  - slug: sarney
+    president: sarney
+    label: José Sarney
+    started_on: '1985-03-15'
+    ended_on: '1990-03-14'
+    party: PMDB
+    position: center
+    economic_headline: Planos Cruzado, Bresser e Verão
+    economic_policy: Tentativas de conter a inflação com mudanças monetárias e congelamentos de preços. Os planos não produziram estabilização duradoura.
+    political_context: Governo de transição para a democracia, apoiado por uma coalizão ampla. A Constituição de 1988 ampliou direitos civis, políticos e sociais.
+    notes: Tancredo Neves foi eleito pelo Colégio Eleitoral, mas não tomou posse. Sarney exerceu a Presidência desde 15 de março de 1985 e tornou-se titular após a morte de Tancredo, em 21 de abril.
+    policies:
+      - { name: Constituição de 1988, area: Direitos, description: Novo marco constitucional com ampliação de direitos e garantias fundamentais. }
+      - { name: Bases constitucionais do SUS, area: Saúde, description: Saúde reconhecida como direito de todos e dever do Estado. A regulamentação do SUS ocorreu em 1990. }
+    milestones:
+      - { year: 1985, title: Transição para o governo civil }
+      - { year: 1986, title: Lançamento do Plano Cruzado }
+      - { year: 1988, title: Promulgação da Constituição }
+    sources:
+      - { title: Constituição da República de 1988, url: 'https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm' }
+      - { title: Banco Central · 30 anos do Real, url: 'https://www.bcb.gov.br/controleinflacao/30anosreal' }
+
+  - slug: collor
+    president: collor
+    label: Fernando Collor
+    started_on: '1990-03-15'
+    ended_on: '1992-10-01'
+    party: PRN
+    position: right
+    economic_headline: Plano Collor e abertura comercial
+    economic_policy: Abertura às importações e programa de desestatização, combinados com bloqueio de ativos financeiros e medidas de combate à inflação.
+    political_context: Primeiro presidente eleito diretamente após a ditadura. Seu governo terminou em meio a um processo de impeachment.
+    notes: A data final é o último dia completo antes do afastamento, ocorrido em 2 de outubro de 1992. Collor renunciou em 29 de dezembro de 1992, quando o Senado concluiu o julgamento do impeachment.
+    policies:
+      - { name: Regulamentação do SUS, area: Saúde, description: Lei Orgânica da Saúde definiu a organização e o funcionamento do sistema. }
+      - { name: Estatuto da Criança e do Adolescente, area: Direitos, description: Proteção integral dos direitos de crianças e adolescentes. }
+    milestones:
+      - { year: 1990, title: Plano Collor e bloqueio de ativos }
+      - { year: 1990, title: Aprovação do ECA e da Lei do SUS }
+      - { year: 1992, title: Afastamento e impeachment }
+    sources:
+      - { title: Lei 8.080/1990 · SUS, url: 'https://www.planalto.gov.br/ccivil_03/leis/l8080.htm' }
+      - { title: Lei 8.069/1990 · ECA, url: 'https://www.planalto.gov.br/ccivil_03/leis/l8069.htm' }
+      - { title: Banco Central · 30 anos do Real, url: 'https://www.bcb.gov.br/controleinflacao/30anosreal' }
+
+  - slug: itamar
+    president: itamar
+    label: Itamar Franco
+    started_on: '1992-10-02'
+    ended_on: '1994-12-31'
+    party: Sem partido / PMDB
+    position: center
+    economic_headline: Plano Real e estabilização
+    economic_policy: Implementação do Plano Real, com ajuste fiscal, Unidade Real de Valor (URV) e introdução da nova moeda em julho de 1994.
+    political_context: Vice-presidente que assumiu durante o afastamento de Collor. Formou uma coalizão ampla para conduzir a transição e a estabilização econômica.
+    notes: Assumiu interinamente em 2 de outubro de 1992 e tornou-se titular em 29 de dezembro. Voltou ao PMDB durante o governo.
+    policies:
+      - { name: Plano Real, area: Economia, description: Nova moeda e reorganização do sistema de preços para enfrentar a hiperinflação. }
+      - { name: Lei Orgânica da Assistência Social, area: Assistência, description: Organização da assistência social e previsão do Benefício de Prestação Continuada. }
+    milestones:
+      - { year: 1992, title: Início do exercício da Presidência }
+      - { year: 1993, title: Aprovação da LOAS }
+      - { year: 1994, title: Entrada do real em circulação }
+    sources:
+      - { title: Banco Central · Plano Real, url: 'https://www.bcb.gov.br/controleinflacao/planoreal' }
+      - { title: Lei 8.742/1993 · LOAS, url: 'https://www.planalto.gov.br/ccivil_03/leis/l8742.htm' }
+
+  - slug: fhc
+    president: fhc
+    label: Fernando Henrique Cardoso
+    started_on: '1995-01-01'
+    ended_on: '2002-12-31'
+    party: PSDB
+    position: center_right
+    economic_headline: Consolidação do Real e reformas
+    economic_policy: Consolidação da estabilização, privatizações e reformas regulatórias. A partir de 1999, câmbio flutuante, metas de inflação e metas fiscais ganharam centralidade.
+    political_context: Dois mandatos consecutivos com agenda de reformas do Estado. O PSDB tem origem social-democrata; a classificação aqui sintetiza a orientação do governo e de sua coalizão.
+    notes: O Plano Real foi lançado no governo Itamar, quando FHC havia sido ministro da Fazenda. O BPC, previsto na LOAS de 1993, começou a ser pago em 1996.
+    policies:
+      - { name: Fundef, area: Educação, description: Fundo de financiamento do ensino fundamental e valorização do magistério. }
+      - { name: Bolsa Escola federal, area: Assistência, description: Transferência de renda vinculada à frequência escolar, instituída em 2001. }
+      - { name: Lei de Responsabilidade Fiscal, area: Economia, description: Regras de planejamento, transparência e responsabilidade na gestão fiscal. }
+    milestones:
+      - { year: 1995, title: Início do primeiro mandato }
+      - { year: 1999, title: Câmbio flutuante e metas de inflação }
+      - { year: 2000, title: Lei de Responsabilidade Fiscal }
+    sources:
+      - { title: LC 101/2000 · Responsabilidade Fiscal, url: 'https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp101.htm' }
+      - { title: Lei 9.424/1996 · Fundef, url: 'https://www.planalto.gov.br/ccivil_03/leis/l9424.htm' }
+      - { title: Lei 10.219/2001 · Bolsa Escola, url: 'https://www.planalto.gov.br/ccivil_03/leis/leis_2001/l10219.htm' }
+      - { title: Banco Central · Histórico das metas, url: 'https://www.bcb.gov.br/controleinflacao/historicometas' }
+
+  - slug: lula-1-2
+    president: lula
+    label: Lula · 1º e 2º mandatos
+    started_on: '2003-01-01'
+    ended_on: '2010-12-31'
+    party: PT
+    position: center_left
+    economic_headline: Estabilidade e inclusão social
+    economic_policy: Manutenção inicial do regime macroeconômico, expansão de transferências de renda e do crédito, valorização do salário mínimo e investimentos públicos.
+    political_context: Dois mandatos com coalizões multipartidárias e agenda de redução da pobreza e ampliação do acesso a serviços públicos.
+    notes: Este registro reúne os dois mandatos consecutivos de 2003 a 2010. O retorno à Presidência em 2023 aparece em um registro separado.
+    policies:
+      - { name: Bolsa Família, area: Assistência, description: Unificação de programas de transferência de renda com condicionalidades de saúde e educação. }
+      - { name: Prouni, area: Educação, description: Bolsas para estudantes de baixa renda no ensino superior privado. }
+      - { name: Minha Casa, Minha Vida, area: Habitação, description: Programa habitacional criado em 2009 para ampliar o acesso à moradia. }
+    milestones:
+      - { year: 2003, title: Criação do Bolsa Família }
+      - { year: 2005, title: Lei do Prouni }
+      - { year: 2009, title: Minha Casa, Minha Vida }
+    sources:
+      - { title: Lei 10.836/2004 · Bolsa Família, url: 'https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l10.836.htm' }
+      - { title: Lei 11.096/2005 · Prouni, url: 'https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2005/lei/l11096.htm' }
+      - { title: Lei 11.977/2009 · Habitação, url: 'https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/lei/l11977.htm' }
+
+  - slug: dilma
+    president: dilma
+    label: Dilma Rousseff
+    started_on: '2011-01-01'
+    ended_on: '2016-05-11'
+    party: PT
+    position: center_left
+    economic_headline: Nova matriz econômica e ajuste fiscal
+    economic_policy: Desonerações tributárias, crédito público e intervenções em preços administrados marcaram parte do governo. Em 2015, houve mudança para uma agenda de ajuste fiscal.
+    political_context: Primeira mulher na Presidência. O segundo mandato foi interrompido pelo processo de impeachment em 2016, em contexto de recessão e crise política.
+    notes: A data final é o último dia completo antes do afastamento, ocorrido em 12 de maio de 2016. Dilma permaneceu titular até a conclusão do impeachment, em 31 de agosto de 2016.
+    policies:
+      - { name: Mais Médicos, area: Saúde, description: Programa para ampliar a oferta de médicos e a formação médica, criado em 2013. }
+      - { name: Lei de Cotas, area: Educação, description: Reserva de vagas em instituições federais de ensino para estudantes de escolas públicas e outros critérios legais. }
+      - { name: Marco Civil da Internet, area: Direitos, description: Princípios, garantias e direitos para o uso da internet no Brasil. }
+    milestones:
+      - { year: 2012, title: Lei de Cotas }
+      - { year: 2013, title: Programa Mais Médicos }
+      - { year: 2016, title: Afastamento e impeachment }
+    sources:
+      - { title: Lei 12.871/2013 · Mais Médicos, url: 'https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12871.htm' }
+      - { title: Lei 12.711/2012 · Cotas, url: 'https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12711.htm' }
+      - { title: Lei 12.965/2014 · Marco Civil, url: 'https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l12965.htm' }
+      - { title: Senado · Impeachment de Dilma, url: 'https://www12.senado.leg.br/noticias/entenda-o-assunto/impeachment-de-dilma-rousseff' }
+
+  - slug: temer
+    president: temer
+    label: Michel Temer
+    started_on: '2016-05-12'
+    ended_on: '2018-12-31'
+    party: PMDB / MDB
+    position: center_right
+    economic_headline: Teto de gastos e reformas
+    economic_policy: Agenda de contenção do crescimento das despesas federais, reforma trabalhista e mudanças na participação do Estado na economia.
+    political_context: Vice-presidente que assumiu durante o afastamento de Dilma e tornou-se titular após o impeachment. O partido retomou a denominação MDB durante esse governo.
+    notes: Exerceu a Presidência interinamente a partir de 12 de maio de 2016 e como titular desde 31 de agosto de 2016.
+    policies:
+      - { name: Teto de gastos, area: Economia, description: EC 95 vinculou os limites de despesas primárias federais à correção pela inflação. }
+      - { name: Reforma trabalhista, area: Trabalho, description: Alterações na CLT, incluindo negociação coletiva e novas modalidades de contratação. }
+      - { name: Reforma do ensino médio, area: Educação, description: Reorganização curricular estabelecida pela Lei 13.415 de 2017. }
+    milestones:
+      - { year: 2016, title: Aprovação do teto de gastos }
+      - { year: 2017, title: Reforma trabalhista }
+      - { year: 2017, title: Reforma do ensino médio }
+    sources:
+      - { title: EC 95/2016 · Teto de gastos, url: 'https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc95.htm' }
+      - { title: Lei 13.467/2017 · Reforma trabalhista, url: 'https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm' }
+      - { title: Lei 13.415/2017 · Ensino médio, url: 'https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13415.htm' }
+
+  - slug: bolsonaro
+    president: bolsonaro
+    label: Jair Bolsonaro
+    started_on: '2019-01-01'
+    ended_on: '2022-12-31'
+    party: PSL / sem partido / PL
+    position: right
+    economic_headline: Agenda liberal e resposta à pandemia
+    economic_policy: Agenda de reformas pró-mercado e previdenciária, com ampliação extraordinária das despesas e transferências durante a pandemia de Covid-19.
+    political_context: Governo conservador nas pautas de costumes e liberal na orientação declarada da economia, marcado pela crise sanitária da Covid-19.
+    notes: Eleito pelo PSL; deixou o partido em 2019 e filiou-se ao PL em 2021. A categoria direita reúne correntes conservadoras e da direita radical; não constitui uma medida numérica.
+    policies:
+      - { name: Reforma da Previdência, area: Previdência, description: Novas regras de aposentadoria e transição, aprovadas pela EC 103 de 2019. }
+      - { name: Auxílio Emergencial, area: Assistência, description: Transferência temporária de renda durante a emergência da Covid-19. }
+      - { name: Auxílio Brasil, area: Assistência, description: Programa de transferência de renda que substituiu o Bolsa Família em 2021. }
+    milestones:
+      - { year: 2019, title: Reforma da Previdência }
+      - { year: 2020, title: Pandemia e Auxílio Emergencial }
+      - { year: 2021, title: Criação do Auxílio Brasil }
+    sources:
+      - { title: EC 103/2019 · Previdência, url: 'https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc103.htm' }
+      - { title: Lei 13.982/2020 · Auxílio Emergencial, url: 'https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/lei/l13982.htm' }
+      - { title: Lei 14.284/2021 · Auxílio Brasil, url: 'https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14284.htm' }
+
+  - slug: lula-3
+    president: lula
+    label: Lula · 3º mandato
+    started_on: '2023-01-01'
+    ended_on:
+    party: PT
+    position: center_left
+    economic_headline: Novo arcabouço fiscal e investimento
+    economic_policy: Novo regime fiscal, retomada de investimentos públicos e reforma da tributação sobre o consumo aprovada em 2023, com implementação gradual.
+    political_context: Retorno de Lula à Presidência com coalizão ampla e agenda de recomposição de programas sociais e de políticas ambientais.
+    notes: Registro aberto iniciado em 2023. A seleção de políticas contempla marcos até 2024; não antecipa resultados eleitorais nem avalia o mandato completo.
+    policies:
+      - { name: Novo Bolsa Família, area: Assistência, description: Programa instituído em 2023, em substituição ao Auxílio Brasil. }
+      - { name: Novo arcabouço fiscal, area: Economia, description: Regime fiscal sustentável estabelecido pela Lei Complementar 200 de 2023. }
+      - { name: Reforma tributária do consumo, area: Economia, description: EC 132 estabeleceu as bases de um novo sistema de tributação sobre bens e serviços. }
+    milestones:
+      - { year: 2023, title: Novo Bolsa Família }
+      - { year: 2023, title: Aprovação do arcabouço fiscal }
+      - { year: 2023, title: Emenda da reforma tributária }
+    sources:
+      - { title: Lei 14.601/2023 · Bolsa Família, url: 'https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14601.htm' }
+      - { title: LC 200/2023 · Regime fiscal, url: 'https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp200.htm' }
+      - { title: EC 132/2023 · Reforma tributária, url: 'https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm' }

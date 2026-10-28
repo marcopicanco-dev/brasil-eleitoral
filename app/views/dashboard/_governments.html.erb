@@ -1,0 +1,22 @@
+<section class="panel governments-panel" id="governos">
+  <div class="panel-heading"><div><h2>Os governos da Nova República</h2><p>Conheça as orientações políticas e as principais agendas de cada gestão.</p></div><span class="small-tag"><%= @administrations.size %> governos</span></div>
+  <%= form_with url: action_name == "presidents" ? presidents_path : root_path(anchor: "governos"), method: :get, class: "filter-form" do |form| %>
+    <div class="search-field"><%= icon :search %><%= form.search_field :q, value: params[:q], placeholder: "Buscar presidente, partido ou agenda…", aria: { label: "Buscar presidente, partido ou agenda" }, maxlength: 100 %></div>
+    <%= form.select :position, Administration::POSITIONS.map { |key, label| [label, key] }, { include_blank: "Todas as posições", selected: params[:position] }, aria: { label: "Posição política" } %>
+    <%= form.select :era, (1980..2020).step(10).map { |year| ["Década de #{year}", year] }, { include_blank: "Todos os períodos", selected: params[:era] }, aria: { label: "Década em exercício" } %>
+    <%= form.submit "Filtrar", class: "button button-secondary" %>
+    <% if params.values_at(:q, :position, :era).any?(&:present?) %><%= link_to "Limpar", action_name == "presidents" ? presidents_path : root_path(anchor: "governos"), class: "clear-filters" %><% end %>
+  <% end %>
+  <div class="table-scroll">
+    <table class="governments-table">
+      <thead><tr><th scope="col">PRESIDENTE / GOVERNO</th><th scope="col">PERÍODO EM EXERCÍCIO</th><th scope="col">PARTIDO NO GOVERNO</th><th scope="col">POSIÇÃO POLÍTICA</th><th scope="col">AGENDA ECONÔMICA</th><th scope="col">PERFIL</th></tr></thead>
+      <tbody>
+        <% @administrations.each do |government| %>
+          <tr><td><%= link_to administration_path(government), class: "president-cell" do %><span class="avatar position-<%= government.position %>"><%= government.president.initials %></span><span><strong><%= government.president.name %></strong><small><%= government.label %></small></span><% end %></td><td class="period-cell"><%= government.period %></td><td><span class="party-label"><%= government.party %></span></td><td><%= position_badge government %></td><td class="economic-cell"><%= government.economic_headline %></td><td><%= link_to administration_path(government), class: "table-arrow", aria: { label: "Explorar governo #{government.label}" } do %><%= icon :arrow %><% end %></td></tr>
+        <% end %>
+        <% if @administrations.empty? %><tr><td colspan="6" class="empty-state">Nenhum governo encontrado. Tente outro nome, partido ou período.</td></tr><% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="table-footer"><span><%= @administrations.size %> de <%= @timeline.size %> períodos de governo</span><%= link_to methodology_path, class: "text-link" do %>Sobre os dados <%= icon :external %><% end %></div>
+</section>

@@ -1,0 +1,87 @@
+<%= render "heading", title: "O Brasil, governo a governo.", subtitle: "Explore as ideias, decisões e políticas que marcaram o país desde 1985." %>
+<section class="intro-banner" aria-label="Contexto histórico">
+  <div class="intro-copy">
+    <span class="intro-kicker"><span class="status-dot"></span> 41 ANOS DE HISTÓRIA DEMOCRÁTICA</span>
+    <h2>Diferentes governos.<br>Uma história em construção.</h2>
+    <p>Da redemocratização aos desafios atuais, conecte os<br class="desktop-break"> presidentes às transformações do Brasil.</p>
+    <a href="#linha-do-tempo" class="text-link">Percorrer a linha do tempo <%= icon :arrow %></a>
+  </div>
+  <div class="congress-art" aria-hidden="true">
+    <span class="art-orbit orbit-one"></span><span class="art-orbit orbit-two"></span>
+    <svg viewBox="0 0 460 210" fill="none">
+      <defs><linearGradient id="building" x1="140" y1="40" x2="350" y2="210" gradientUnits="userSpaceOnUse"><stop stop-color="var(--color-brasil-blue-medium)" stop-opacity=".65"/><stop offset="1" stop-color="var(--color-brasil-blue)"/></linearGradient></defs>
+      <path d="M8 186H450M40 197H420" stroke="var(--color-brasil-green)" stroke-opacity=".35"/>
+      <path d="M188 39H212V182H188V39ZM226 39H250V182H226V39Z" fill="url(#building)" stroke="var(--color-brasil-blue)" stroke-opacity=".7"/>
+      <path d="M200 39V181M238 39V181M212 109H226M212 121H226" stroke="var(--color-surface)" stroke-opacity=".5"/>
+      <path d="M62 145C68 181 137 181 144 145H62Z" fill="var(--color-brasil-green)" fill-opacity=".8" stroke="var(--color-brasil-green-dark)"/>
+      <path d="M290 172C294 126 367 126 374 172H290Z" fill="var(--color-brasil-yellow)" fill-opacity=".9" stroke="var(--color-brasil-yellow-ink)"/>
+      <path d="M37 177H401V186H37V177Z" fill="var(--color-brasil-blue)" fill-opacity=".75" stroke="var(--color-brasil-blue)"/>
+      <path d="M55 183H386M91 155H115M312 161H352M188 51H212M226 51H250" stroke="var(--color-surface)" stroke-opacity=".5"/>
+      <path d="M416 92V177" stroke="var(--color-brasil-blue)" stroke-width="1.5"/>
+      <path d="M416 95L440 101L416 112Z" fill="var(--color-brasil-green)" stroke="var(--color-brasil-green-dark)" stroke-width="1.5"/>
+    </svg>
+    <div class="art-caption">CONGRESSO NACIONAL <span>BRASÍLIA, DF</span></div>
+  </div>
+</section>
+<div class="stats-grid">
+  <% [
+    ["Presidentes", @president_count.to_s.rjust(2, "0"), "Lideranças que exerceram o cargo", :users, "green"],
+    ["Períodos de governo", @timeline.size.to_s.rjust(2, "0"), "Incluindo mandatos consecutivos agrupados", :flag, "blue"],
+    ["Início da Nova República", "1985", "Retomada do governo civil", :timeline, "yellow"],
+    ["Constituição cidadã", "1988", "O marco da nossa democracia", :book, "green"]
+  ].each do |label, value, detail, symbol, color| %>
+    <article class="stat-card"><div class="stat-top"><span><%= label %></span><span class="stat-icon <%= color %>"><%= icon symbol %></span></div><strong><%= value %></strong><p><%= detail %></p></article>
+  <% end %>
+</div>
+<section id="linha-do-tempo" class="panel timeline-panel">
+  <div class="panel-heading"><div><h2>Linha do tempo <span class="muted font-normal">dos governos</span></h2><p>Uma trajetória de mudanças. Selecione um governo para explorar.</p></div><span class="small-tag">1985 → presente</span></div>
+  <div class="timeline-scroll">
+    <div class="timeline-track">
+      <% @timeline.each do |government| %>
+        <%= link_to administration_path(government), class: "timeline-item position-#{government.position}" do %>
+          <span class="timeline-year"><%= government.started_on.year %></span><span class="timeline-node"><%= government.president.initials %></span><strong><%= government.president.short_name %></strong><span class="timeline-party"><%= government.party.split(" / ").first %></span>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="timeline-legend"><% Administration::POSITIONS.each do |key, label| %><span class="position-<%= key %>"><i></i><%= label %></span><% end %><%= link_to "Entenda os critérios", methodology_path %></div>
+</section>
+<div class="analysis-grid">
+  <section class="panel chart-panel" id="economia">
+    <div class="panel-heading"><div><h2>A inflação depois do Real</h2><p>IPCA acumulado no ano · 1995–2024</p></div><span class="small-tag"><span class="status-dot"></span> IBGE / SIDRA</span></div>
+    <% if @observations.any? %>
+      <div class="chart-summary"><strong><%= number_with_precision @observations.last.inflation, precision: 2 %><span>%</span></strong><span>IPCA em <%= @observations.last.year %><br><small>Variação anual dos preços</small></span></div>
+      <% points = inflation_points(@observations) %>
+      <svg class="inflation-chart" viewBox="0 0 760 248" role="img" aria-labelledby="chart-title chart-description">
+        <title id="chart-title">Inflação anual no Brasil, de 1995 a 2024</title><desc id="chart-description">Série oficial do IPCA do IBGE. Consulte os valores na tabela expandível abaixo do gráfico.</desc>
+        <defs><linearGradient id="chart-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--color-brasil-green)" stop-opacity=".18"/><stop offset="1" stop-color="var(--color-brasil-green)" stop-opacity="0"/></linearGradient></defs>
+        <% [0, 5, 10, 15, 20, 25].each do |value| %><% y = 207 - value * 7 %><line x1="48" x2="728" y1="<%= y %>" y2="<%= y %>" stroke="var(--color-brasil-blue)" stroke-opacity=".1" stroke-dasharray="4 5"/><text x="33" y="<%= y + 4 %>" text-anchor="end"><%= value %>%</text><% end %>
+        <path d="M <%= points.map { |x,y| "#{chart_coordinate(x)},#{chart_coordinate(y)}" }.join(' L ') %> L 728,207 L 48,207 Z" fill="url(#chart-fill)"/>
+        <polyline points="<%= points.map { |x,y| "#{chart_coordinate(x)},#{chart_coordinate(y)}" }.join(' ') %>" fill="none" stroke="var(--color-brasil-green-dark)" stroke-width="2.5" stroke-linejoin="round"/>
+        <% @observations.each_with_index do |observation, index| %><circle cx="<%= chart_coordinate(points[index][0]) %>" cy="<%= chart_coordinate(points[index][1]) %>" r="3" fill="var(--color-brasil-green-dark)" class="chart-point"><title><%= observation.year %>: <%= number_with_precision observation.inflation, precision: 2 %>%</title></circle><% if index % 5 == 0 || index == @observations.size - 1 %><text x="<%= chart_coordinate(points[index][0]) %>" y="236" text-anchor="middle"><%= observation.year %></text><% end %><% end %>
+      </svg>
+      <details class="chart-data"><summary>Consultar dados do gráfico</summary><div class="data-values"><% @observations.each do |observation| %><span><b><%= observation.year %></b> <%= number_with_precision observation.inflation, precision: 2 %>%</span><% end %></div></details>
+    <% else %><p class="empty-state">Os indicadores serão exibidos após carregar a base de dados.</p><% end %>
+    <div class="panel-footnote">Fonte: <a href="https://sidra.ibge.gov.br/tabela/1737" target="_blank" rel="noopener">IBGE · Tabela 1737</a>. Anos civis completos; os resultados não indicam causalidade de um governo.</div>
+  </section>
+  <section class="panel spectrum-panel">
+    <div class="panel-heading"><div><h2>Perspectivas políticas</h2><p>Distribuição dos períodos de governo</p></div><%= icon :chart, css: "muted" %></div>
+    <div class="spectrum-total"><strong><%= @timeline.size.to_s.rjust(2, "0") %></strong><span>governos em<br>perspectiva</span></div>
+    <div class="spectrum-bar" aria-hidden="true"><% Administration::POSITIONS.each do |key, label| %><% count = @timeline.count { |g| g.position == key } %><span class="position-<%= key %>" style="flex: <%= count %>"></span><% end %></div>
+    <div class="spectrum-rows"><% Administration::POSITIONS.each do |key, label| %><% count = @timeline.count { |g| g.position == key } %><a href="<%= presidents_path(position: key) %>" class="spectrum-row position-<%= key %>"><span><i></i><%= label %></span><strong><%= count.to_s.rjust(2, "0") %><small><%= @timeline.empty? ? 0 : (count * 100.0 / @timeline.size).round %>%</small></strong></a><% end %></div>
+    <p class="spectrum-note"><%= icon :info %><span>Síntese editorial por governo. Coalizões e orientações mudam ao longo do tempo. <%= link_to "Ver metodologia", methodology_path %></span></p>
+  </section>
+</div>
+<%= render "governments" %>
+<section id="politicas" class="policies-section">
+  <div class="section-heading"><div><span class="eyebrow">PARA ALÉM DOS MANDATOS</span><h2>Políticas que atravessam governos</h2></div><%= link_to methodology_path, class: "text-link" do %>Explore com contexto <%= icon :arrow %><% end %></div>
+  <div class="policy-cards">
+    <% [
+      ["SAÚDE PÚBLICA", "Um sistema para todos", "Da Constituição de 1988 à regulamentação em 1990: a construção do Sistema Único de Saúde.", "collor", :users, "green"],
+      ["ESTABILIDADE ECONÔMICA", "Uma nova moeda, outro cenário", "O Plano Real nasceu no governo Itamar e sua consolidação seguiu nas gestões seguintes.", "itamar", :chart, "blue"],
+      ["PROTEÇÃO SOCIAL", "Renda e oportunidades", "Bolsa Escola, Bolsa Família e Auxílio Brasil: diferentes desenhos de transferência de renda.", "lula-1-2", :book, "yellow"]
+    ].each do |area, title, description, slug, symbol, color| %>
+      <%= link_to administration_path(slug), class: "policy-card" do %><span class="stat-icon <%= color %>"><%= icon symbol %></span><span class="policy-area"><%= area %></span><h3><%= title %></h3><p><%= description %></p><span class="text-link">Conhecer a história <%= icon :arrow %></span><% end %>
+    <% end %>
+  </div>
+</section>

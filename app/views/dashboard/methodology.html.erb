@@ -1,0 +1,30 @@
+<% content_for :title, "Fontes e metodologia" %>
+<%= render "heading", title: "Dados com contexto.", subtitle: "Como organizamos os governos, as classificações e os indicadores." %>
+<article class="panel methodology prose-content">
+  <span class="eyebrow">TRANSPARÊNCIA EDITORIAL</span>
+  <h2>Um ponto de partida para conhecer a Nova República</h2>
+  <p>O Brasil Eleitoral reúne informações sobre quem exerceu a Presidência desde 15 de março de 1985. A versão inicial tem oito pessoas e nove períodos de governo: os mandatos consecutivos de FHC, Lula (2003–2010) e Dilma são agrupados. O retorno de Lula em 2023 é um período separado.</p>
+  <h3>Datas e transições</h3>
+  <p>As datas indicam o exercício do cargo, incluindo as interinidades de Itamar Franco e Michel Temer. Para apresentar intervalos consecutivos sem sobreposição, a data final é o último dia completo anterior à sucessão. O afastamento de Collor ocorreu em 2 de outubro de 1992, e o de Dilma em 12 de maio de 2016, antes do encerramento formal de suas titularidades. Os perfis explicam essas diferenças. Tancredo Neves não entra na contagem porque não exerceu a Presidência.</p>
+  <h3>O que significam as posições políticas?</h3>
+  <p>Os rótulos são sínteses editoriais qualitativas da orientação de cada governo e de sua coalizão. Não são uma classificação oficial nem uma pontuação de desempenho. Centro-esquerda, centro, centro-direita e direita simplificam diferenças internas; uma categoria não define todas as decisões de um presidente.</p>
+  <p>A literatura de ciência política mostra que posições partidárias variam com o tempo e com o método. Usamos esse debate como referência de contexto, sem transferir automaticamente medidas atuais dos partidos para governos históricos. Direita reúne aqui correntes distintas; a categoria não distingue sua intensidade. As sínteses devem ser refinadas conforme o projeto amplia sua bibliografia.</p>
+  <a class="source-link" href="https://www.scielo.br/j/dados/a/zzyM3gzHD4P45WWdytXjZWg/?format=html&amp;lang=pt" target="_blank" rel="noopener">Bolognesi, Ribeiro e Codato · Uma Nova Classificação Ideológica dos Partidos Políticos Brasileiros (Dados, 2023) <%= icon :external %></a>
+  <h3>Economia e políticas públicas</h3>
+  <p>Selecionamos marcos para facilitar a exploração inicial, sem pretender listar todas as ações ou avaliar integralmente seus efeitos. Leis são produzidas em interação entre Executivo e Legislativo. A promulgação durante um governo não implica autoria exclusiva daquele presidente.</p>
+  <p>A seleção de políticas do período aberto em 2023 contempla marcos até 2024. A cobertura não é um acompanhamento em tempo real e não antecipa resultados das eleições de 2026.</p>
+  <h3>O gráfico do IPCA</h3>
+  <p>A série contém o IPCA acumulado em cada ano civil de 1995 a 2024, em percentual, para o Brasil. Os dados foram obtidos da tabela 1737 do SIDRA/IBGE, variável 69, usando dezembro de cada ano. Os valores estão armazenados localmente e não dependem de uma chamada externa ao abrir o dashboard.</p>
+  <p>O recorte começa no primeiro ano civil completo após o lançamento do Real. A inflação é influenciada por condições domésticas e internacionais; sua associação a um mandato não demonstra causalidade. Não comparamos médias de governos com períodos incompletos.</p>
+  <a class="source-link" href="https://sidra.ibge.gov.br/tabela/1737" target="_blank" rel="noopener">IBGE · IPCA, série histórica (Tabela 1737) <%= icon :external %></a>
+  <h3>Fontes primárias e consulta histórica</h3>
+  <p>Cada perfil traz links para a legislação e as fontes usadas em seus destaques. Para datas e sucessões, consulte também a galeria presidencial. Para a história da estabilização, o Banco Central reúne materiais sobre os planos anteriores e o Plano Real.</p>
+  <div class="sources-list">
+    <a href="https://www.gov.br/planalto/pt-br/conheca-a-presidencia/acervo/galeria-de-presidentes" target="_blank" rel="noopener">Presidência da República · Galeria de presidentes <%= icon :external %></a>
+    <a href="https://www.bcb.gov.br/controleinflacao/planoreal" target="_blank" rel="noopener">Banco Central · Plano Real <%= icon :external %></a>
+    <a href="https://www.bcb.gov.br/controleinflacao/30anosreal" target="_blank" rel="noopener">Banco Central · História da estabilização <%= icon :external %></a>
+  </div>
+  <h3>Créditos do design</h3>
+  <p>A interface adapta a navegação lateral e os painéis do Light Blue React Template, da Flatlogic, para Rails e Tailwind CSS. O tema usa fundo branco com verde, amarelo e azul inspirados na bandeira do Brasil. A licença MIT original está preservada em docs/licenses/light-blue-react-template.txt.</p>
+  <a class="source-link" href="https://github.com/flatlogic/light-blue-react-template" target="_blank" rel="noopener">Flatlogic · Light Blue React Template <%= icon :external %></a>
+</article>

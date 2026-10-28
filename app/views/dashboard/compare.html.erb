@@ -1,0 +1,10 @@
+<% content_for :title, "Comparar governos" %>
+<%= render "heading", title: "Governos em perspectiva.", subtitle: "Compare orientações, agendas e políticas públicas lado a lado." %>
+<%= form_with url: compare_path, method: :get, class: "panel comparison-form" do |form| %>
+  <div><%= form.label :left, "PRIMEIRO GOVERNO" %><%= form.select :left, @timeline.map { |government| ["#{government.label} (#{government.period})", government.slug] }, selected: @left&.slug %></div>
+  <span class="compare-symbol"><%= icon :compare %></span>
+  <div><%= form.label :right, "SEGUNDO GOVERNO" %><%= form.select :right, @timeline.map { |government| ["#{government.label} (#{government.period})", government.slug] }, selected: @right&.slug %></div>
+  <%= form.submit "Comparar", class: "button button-primary" %>
+<% end %>
+<% if @left && @right %><div class="comparison-grid"><%= render "government_detail", government: @left %><%= render "government_detail", government: @right %></div><% else %><p class="empty-state">Carregue a base de governos para iniciar a comparação.</p><% end %>
+<p class="comparison-note">A comparação descreve decisões e orientações. Contextos históricos, competências do Congresso e fatores externos também influenciam os resultados.</p>

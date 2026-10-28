@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <title><%= content_for?(:title) ? "#{yield(:title)} · Brasil Eleitoral" : "Brasil Eleitoral · Governos da Nova República" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Explore os governos brasileiros desde 1985: posições políticas, economia e políticas públicas, com fontes e contexto histórico.">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+  <body data-controller="navigation" data-action="keydown.esc@window->navigation#close">
+    <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+    <button class="sidebar-backdrop" data-navigation-target="backdrop" data-action="navigation#close" aria-label="Fechar menu" hidden></button>
+    <aside class="sidebar" id="menu-principal" data-navigation-target="sidebar">
+      <%= link_to root_path, class: "brand", aria: { label: "Brasil Eleitoral, início" } do %>
+        <span class="brand-mark"><span></span></span>
+        <span>brasil<span class="brand-light">eleitoral</span><small>OBSERVATÓRIO POLÍTICO</small></span>
+      <% end %>
+      <div class="sidebar-label">EXPLORAR</div>
+      <nav aria-label="Navegação principal">
+        <%= nav_link "Visão geral", root_path, :grid, active: action_name == "index" %>
+        <%= nav_link "Presidentes", presidents_path, :users, active: %w[presidents show].include?(action_name) %>
+        <%= nav_link "Linha do tempo", root_path(anchor: "linha-do-tempo"), :timeline %>
+        <%= nav_link "Economia", root_path(anchor: "economia"), :chart %>
+        <%= nav_link "Políticas públicas", root_path(anchor: "politicas"), :book %>
+        <%= nav_link "Comparar governos", compare_path, :compare, active: action_name == "compare" %>
+      </nav>
+      <div class="sidebar-label mt-10">SOBRE O PROJETO</div>
+      <%= nav_link "Fontes e metodologia", methodology_path, :info, active: action_name == "methodology" %>
+      <div class="sidebar-bottom">
+        <div class="democracy-mark"><span class="status-dot"></span> Memória para a democracia</div>
+        <p>Conhecer o passado.<br>Entender o presente.</p>
+        <span class="sidebar-version">NOVA REPÚBLICA · DESDE 1985</span>
+      </div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar">
+        <div class="flex items-center gap-4">
+          <button class="icon-button mobile-menu" data-action="navigation#toggle" data-navigation-target="toggle" aria-label="Abrir menu" aria-controls="menu-principal" aria-expanded="false"><%= icon :menu %></button>
+          <span class="topbar-label">Um olhar sobre a história política do Brasil</span>
+        </div>
+        <div class="flex items-center gap-5">
+          <span class="period-label"><%= icon :calendar %> 1985 — presente</span>
+          <span class="topbar-divider"></span>
+          <span class="language-label"><span class="brazil-flag" aria-hidden="true">◆</span> PT-BR</span>
+        </div>
+      </header>
+      <main id="conteudo" class="main-content">
+        <div class="breadcrumb">Brasil Eleitoral <%= icon :chevron %> <span><%= content_for?(:title) ? yield(:title) : "Visão geral" %></span></div>
+        <%= yield %>
+        <footer class="page-footer">
+          <span>Brasil Eleitoral <span class="footer-dot">·</span> A história em perspectiva.</span>
+          <%= link_to "Fontes, critérios e contexto", methodology_path %>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
