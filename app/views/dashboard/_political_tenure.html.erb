@@ -1,0 +1,49 @@
+<% observed_through = [Date.current, Date.new(2031, 1, 4)].min %>
+<% series = political_tenure_series(@timeline, through: Date.new(2031, 1, 4), include_center: true, observed_through: observed_through) %>
+<section class="panel political-tenure-panel" id="esquerda-direita">
+  <div class="panel-heading"><div><h2>Esquerda versus Direita</h2><p>Anos acumulados no poder no Brasil · 1985–2031 · histórico e projeção de conclusão do mandato</p></div><span class="small-tag">1985 → 2031</span></div>
+  <% if @timeline.any? && series.any? %>
+    <% origin = series.first[:date]; cutoff = series.last[:date] %>
+    <% ceiling = [(series.flat_map { |row| [row[:right], row[:left]] }.max / 5).ceil * 5, 5].max %>
+    <% fields = [[:right, "Centro, centro-direita e direita", "#2563eb"], [:left, "Esquerda e centro-esquerda", "#dc2626"]] %>
+    <div class="tenure-legend">
+      <% fields.each do |field, label, color| %>
+        <span><i style="background: <%= color %>"></i><%= label %> <strong><%= number_with_precision series.last[field], precision: 2 %> anos em 2031</strong></span>
+      <% end %>
+    </div>
+    <p class="tenure-context">Linhas contínuas: tempo exercido até <%= observed_through.strftime('%d/%m/%Y') %>. Tracejadas: projeção de continuidade até 04/01/2031, véspera da posse seguinte.</p>
+    <svg class="inflation-chart tenure-chart" viewBox="0 0 760 268" role="img" aria-labelledby="tenure-title tenure-description">
+      <title id="tenure-title">Anos acumulados no poder: Esquerda versus Direita, 1985–<%= cutoff.year %></title>
+      <desc id="tenure-description">Linha azul: centro, centro-direita e direita. Linha vermelha: esquerda e centro-esquerda. O trecho futuro é tracejado e representa uma projeção de conclusão do mandato. Valores anuais disponíveis na tabela abaixo.</desc>
+      <text x="48" y="20">Anos no poder (acumulados)</text>
+      <% (0..ceiling).step(5) do |value| %>
+        <% y = 222 - value * 180.0 / ceiling %>
+        <line x1="48" x2="728" y1="<%= chart_coordinate y %>" y2="<%= chart_coordinate y %>" stroke="var(--color-brasil-blue)" stroke-opacity=".1" stroke-dasharray="4 5"/>
+        <text x="33" y="<%= chart_coordinate(y + 4) %>" text-anchor="end"><%= value %></text>
+      <% end %>
+      <% fields.each do |field, label, color| %>
+        <% historical = series.select { |row| row[:date] <= observed_through } %>
+        <% projected = series.select { |row| row[:date] >= observed_through } %>
+        <% [historical, projected].each_with_index do |segment, segment_index| %>
+        <% points = segment.map { |row| [48 + (row[:date] - origin).to_f / [(cutoff - origin).to_i, 1].max * 680, 222 - row[field] * 180 / ceiling] } %>
+        <polyline class="<%= segment_index.zero? ? 'tenure-line' : 'tenure-projection' %> tenure-<%= field %>" points="<%= points.map { |x, y| "#{chart_coordinate(x)},#{chart_coordinate(y)}" }.join(' ') %>" fill="none" stroke="<%= color %>" stroke-width="3" stroke-linejoin="round" stroke-dasharray="<%= segment_index.zero? ? 'none' : '7 4' %>"/>
+        <% segment.each_with_index do |row, index| %>
+          <circle cx="<%= chart_coordinate points[index][0] %>" cy="<%= chart_coordinate points[index][1] %>" r="3" fill="<%= color %>"><title><%= row[:date].strftime('%d/%m/%Y') %> · <%= 'Projeção · ' if row[:date] > observed_through %><%= label %>: <%= number_with_precision row[field], precision: 2 %> anos acumulados</title></circle>
+        <% end %>
+        <% end %>
+      <% end %>
+      <% ([1985] + (1990...cutoff.year).step(5).select { |year| cutoff.year - year >= 3 } + [cutoff.year]).uniq.each do |year| %>
+        <% date = year == 1985 ? origin : [Date.new(year, 12, 31), cutoff].min %>
+        <text class="tenure-year" x="<%= chart_coordinate(48 + (date - origin).to_f / [(cutoff - origin).to_i, 1].max * 680) %>" y="250" text-anchor="<%= year == cutoff.year ? 'end' : 'middle' %>"><%= year %></text>
+      <% end %>
+    </svg>
+    <details class="chart-data"><summary>Consultar anos acumulados por campo político</summary>
+      <div class="tenure-table-scroll"><table class="tenure-table"><thead><tr><th scope="col">Data de corte</th><th scope="col">Centro, centro-direita e direita (anos)</th><th scope="col">Esquerda e centro-esquerda (anos)</th></tr></thead><tbody>
+        <% series.each do |row| %><tr><th scope="row"><%= row[:date].strftime('%d/%m/%Y') %><%= ' · projeção' if row[:date] > observed_through %></th><td><%= number_with_precision row[:right], precision: 2 %></td><td><%= number_with_precision row[:left], precision: 2 %></td></tr><% end %>
+      </tbody></table></div>
+    </details>
+    <div class="panel-footnote">Comparação bilateral editorial: azul reúne Sarney, Collor, Itamar, FHC, Temer e Bolsonaro; vermelho reúne Lula e Dilma. O centro integra o bloco azul apenas para esta comparação. Contagem por dias de exercício (incluindo interinidades), divididos por 365,2425. Projeção pressupõe continuidade de Lula até 04/01/2031, considerando a <a href="https://www.tse.jus.br/comunicacao/noticias/2026/Outubro/presidente-do-tse-anuncia-reeleicao-de-lula-e-faz-balanco-do-2o-turno-das-eleicoes-2026" target="_blank" rel="noopener">reeleição anunciada pelo TSE</a>. O tempo futuro ainda não foi exercido. <%= link_to "Datas, critérios e fontes", methodology_path(anchor: "anos-no-poder") %>.</div>
+  <% else %>
+    <p class="empty-state">A comparação será exibida após carregar a base de governos.</p>
+  <% end %>
+</section>

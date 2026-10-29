@@ -42,4 +42,27 @@ module DashboardHelper
   end
 
   def chart_coordinate(value) = format("%.2f", value)
+
+  def political_tenure_series(governments, through: Date.current, include_center: false, observed_through: nil)
+    origin = Date.new(1985, 3, 15)
+    return [] if through < origin
+
+    dates = [origin] + (1985..through.year).map { |year| [Date.new(year, 12, 31), through].min }
+    dates << observed_through if observed_through && observed_through.between?(origin, through)
+    dates.uniq.sort.map do |date|
+      totals = { right: 0.0, left: 0.0 }
+      governments.each do |government|
+        field = { "right" => :right, "center_right" => :right, "center_left" => :left }[government.position]
+        field = :right if include_center && government.position == "center"
+        next unless field
+
+        first = [government.started_on, origin].max
+        last = [government.ended_on || through, date].min
+        # The origin is the zero point; later samples include the whole cutoff day.
+        days = date == origin ? 0 : [(last - first).to_i + 1, 0].max
+        totals[field] += days / 365.2425
+      end
+      totals.merge(date: date)
+    end
+  end
 end

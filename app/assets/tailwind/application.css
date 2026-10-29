@@ -140,6 +140,17 @@
   .inflation-chart { width: 100%; padding: 0 14px 0 5px; margin-top: 1px; }
   .inflation-chart text { fill: var(--color-muted); font-size: 10px; font-family: var(--font-sans); }
   .chart-point { transition: r .2s; }
+  .political-tenure-panel { margin-top: 20px; margin-bottom: 24px; }
+  .tenure-chart .tenure-year { font-size: 8px; }
+  .tenure-context { padding: 0 24px 12px; color: var(--color-muted); font-size: 11px; line-height: 1.6; }
+  .tenure-legend { display: flex; flex-wrap: wrap; gap: 12px 28px; padding: 20px 24px 12px; font-size: 12px; }
+  .tenure-legend > span { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .tenure-legend i { width: 20px; height: 3px; }
+  .tenure-legend strong { font-weight: 600; }
+  .tenure-table-scroll { overflow-x: auto; }
+  .tenure-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 11px; }
+  .tenure-table th, .tenure-table td { padding: 8px; text-align: right; border-bottom: 1px solid var(--color-border); }
+  .tenure-table th:first-child { text-align: left; }
   .chart-point:hover { r: 6; }
   .chart-data { color: var(--color-muted); margin: 4px 23px 13px; font-size: 9px; }
   .chart-data summary { width: fit-content; }

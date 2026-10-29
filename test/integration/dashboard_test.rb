@@ -13,6 +13,12 @@ class DashboardTest < ActionDispatch::IntegrationTest
     assert_select ".timeline-item", 9
     assert_select ".chart-point", 30
     assert_select ".chart-summary strong", /4,83/
+    assert_select "#esquerda-direita h2", "Esquerda versus Direita"
+    assert_select ".tenure-line[stroke='#2563eb']", 1
+    assert_select ".tenure-line[stroke='#dc2626']", 1
+    assert_select ".tenure-projection", 2
+    assert_select ".tenure-table tbody tr:last-child", /04\/01\/2031.*projeção/
+    assert_select ".tenure-legend", /Centro, centro-direita e direita/
   end
 
   test "presidents can be searched and filtered" do
