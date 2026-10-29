@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-# brasil-eleitoral
-Dashboad com todos os Presidentes do Brasil desde a redemocratização até os dias atuais
-=======
 # Brasil Eleitoral
+
+![Dashboard do Brasil Eleitoral com indicadores e linha do tempo dos governos](docs/images/brasil-eleitoral-dashboard.png)
 
 Dashboard dos presidentes que exerceram o governo desde a redemocratização em 1985. Interface em português, inspirada no [Light Blue React Template](https://github.com/flatlogic/light-blue-react-template), adaptada para views Rails e Tailwind.
 
@@ -16,23 +14,106 @@ O tema tem fundo branco, verde nas ações, azul nos títulos e amarelo nos dest
 - Hotwire: Turbo, Stimulus e Importmap. Não exige Node ou React.
 - Minitest e testes de navegador com Selenium/Chrome.
 
-## Executar
+## Executar com Docker (macOS)
 
-É necessário ter Ruby/Bundler e PostgreSQL instalados. O usuário local do PostgreSQL precisa conseguir criar os bancos `brasil_eleitoral_development` e `brasil_eleitoral_test`. A configuração padrão usa o usuário do sistema por socket; para outra instalação, use as variáveis padrão do PostgreSQL `PGHOST`, `PGPORT`, `PGUSER` e `PGPASSWORD`.
+Instale e abra o Docker Desktop. Ruby, Rails, Bundler, PostgreSQL e Tailwind serão executados nos containers; não é necessário instalá-los no Mac. Este projeto não utiliza MongoDB nem Redis.
 
-```sh
-rtk bundle install
-rtk bin/setup --skip-server
-rtk bin/dev
-```
+### 1. Abra o projeto
 
-Abra **http://localhost:3000**. O `bin/dev` inicia o Rails e recompila o Tailwind ao editar o CSS. O `bin/setup` prepara o banco, carrega o catálogo e compila o CSS.
-
-Para recarregar o conteúdo após editar os arquivos de dados:
+Se ainda não tiver o repositório:
 
 ```sh
-rtk bin/rails db:seed
+git clone https://github.com/marcopicanco-dev/brasil-eleitoral.git
+cd brasil-eleitoral
 ```
+
+Se já clonou, abra o terminal na pasta existente. Opcionalmente, abra o editor com `code .`.
+
+Confirme que `Dockerfile.dev` e `compose.yaml` estão na raiz e verifique o Docker:
+
+```sh
+docker --version
+docker compose version
+docker info
+docker compose config --quiet
+```
+
+Se `docker info` não conectar ao servidor, aguarde o Docker Desktop terminar de iniciar.
+
+### 2. Construa a imagem de desenvolvimento
+
+```sh
+docker compose build
+```
+
+O `Dockerfile.dev` instala as dependências do sistema, Bundler e Foreman. O `Dockerfile` original é voltado à produção.
+
+### 3. Prepare as dependências e o banco
+
+Adicione ao lockfile a plataforma Linux usada pelo container (inclusive em Macs Apple Silicon):
+
+```sh
+docker compose run --rm --no-deps app ruby -e 'exec "bundle", "lock", "--add-platform", Gem::Platform.local.to_s'
+```
+
+Esse comando pode atualizar o `Gemfile.lock` local. Em seguida:
+
+```sh
+docker compose run --rm app bin/setup --skip-server
+```
+
+O Compose inicia o PostgreSQL e aguarda sua disponibilidade. O setup instala as gems, prepara o banco, importa os dados e compila o Tailwind. A primeira execução pode demorar por causa dos downloads.
+
+### 4. Inicie o projeto
+
+```sh
+docker compose up -d
+docker compose ps
+docker compose logs -f app
+```
+
+Acesse **http://localhost:3000**. Use `Ctrl+C` para sair dos logs; os containers continuam funcionando.
+
+O Rails e o observador do Tailwind são iniciados pelo `bin/dev`. Os arquivos da pasta local são compartilhados com o container, permitindo editar no VS Code e acompanhar as alterações.
+
+### 5. Confira os dados
+
+```sh
+docker compose exec app bin/rails runner 'puts [President.count, Administration.count, EconomicObservation.count].inspect'
+```
+
+Com o catálogo atual, o resultado esperado é `[8, 9, 30]`.
+
+### Comandos do dia a dia
+
+Execute na raiz do projeto:
+
+| Objetivo | Comando |
+| --- | --- |
+| Iniciar | `docker compose up -d` |
+| Parar | `docker compose stop` |
+| Acompanhar logs | `docker compose logs -f app` |
+| Console Rails | `docker compose exec app bin/rails console` |
+| Terminal no container | `docker compose exec app bash` |
+| Aplicar migrations | `docker compose exec app bin/rails db:migrate` |
+| Recarregar catálogo | `docker compose exec app bin/rails db:seed` |
+| Instalar gems após alterar o Gemfile | `docker compose run --rm app bundle install` |
+| Reconstruir após alterar o Dockerfile.dev | `docker compose build` |
+| Remover containers preservando volumes | `docker compose down` |
+
+Após instalar gems ou reconstruir a imagem, execute `docker compose up -d` (ou `docker compose restart app` se apenas instalou gems).
+
+### Persistência e configuração
+
+O volume `postgres_data` preserva o banco e o volume `gems` preserva as gems. Não use `docker compose down -v` para uma parada comum: ele apaga esses volumes, incluindo o banco local.
+
+A configuração de desenvolvimento utiliza PostgreSQL 18, host `postgres`, usuário `brasil` e senha `senha_local`, definidos no Compose. Essas credenciais são apenas para desenvolvimento. O banco não publica uma porta no Mac; a aplicação fica disponível em `127.0.0.1:3000`.
+
+### Problemas comuns
+
+- **Porta 3000 ocupada:** pare o processo que a utiliza ou altere o mapeamento no Compose para `127.0.0.1:3001:3000` e acesse `http://localhost:3001`.
+- **Erro no build ou setup:** consulte a mensagem completa; não avance enquanto o comando falhar. Para o banco, consulte `docker compose logs postgres`.
+- **Mudança em gems:** execute `bundle install` pelo container conforme a tabela e reinicie o serviço `app`.
 
 ## O que já funciona
 
@@ -59,14 +140,15 @@ As posições políticas são sínteses editoriais qualitativas. As políticas s
 
 ## Verificação
 
+Com os serviços em execução:
+
 ```sh
-rtk bin/rails test
-rtk bin/rails test:system
-rtk bin/rails zeitwerk:check
-rtk bin/rails tailwindcss:build
+docker compose exec app bin/rails test
+docker compose exec app bin/rails zeitwerk:check
+docker compose exec app bin/rails tailwindcss:build
 ```
 
-Os testes de sistema precisam de Google Chrome. O Selenium Manager resolve o driver compatível, podendo precisar de rede na primeira execução.
+Os testes de sistema (`bin/rails test:system`) precisam de um navegador Chrome acessível ao Selenium. A imagem de desenvolvimento fornecida não inclui Chrome; esses testes exigem configuração adicional de navegador no ambiente Docker.
 
 ## Estrutura principal
 
@@ -77,5 +159,4 @@ Os testes de sistema precisam de Google Chrome. O Selenium Manager resolve o dri
 - `app/javascript/controllers/navigation_controller.js`: menu móvel.
 - `db/seeds.rb`: importação transacional dos arquivos locais.
 
-O projeto está preparado para desenvolvimento local. Não foi publicado e nenhum commit foi criado. A licença MIT do template original está preservada em [docs/licenses/light-blue-react-template.txt](docs/licenses/light-blue-react-template.txt).
->>>>>>> a1ec455 (dashboard com os presidentes do pais desde a redemocratização)
+O projeto está preparado para desenvolvimento local. A licença MIT do template original está preservada em [docs/licenses/light-blue-react-template.txt](docs/licenses/light-blue-react-template.txt).

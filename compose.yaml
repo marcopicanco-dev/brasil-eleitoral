@@ -1,0 +1,54 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command:
+      - bash
+      - -c
+      - rm -f tmp/pids/server.pid && exec bin/dev
+    ports:
+      - "127.0.0.1:3000:3000"
+    volumes:
+      - .:/app
+      - gems:/usr/local/bundle
+    environment:
+      RAILS_ENV: development
+      BINDING: "0.0.0.0"
+      PORT: "3000"
+      PGHOST: postgres
+      PGPORT: "5432"
+      PGUSER: brasil
+      PGPASSWORD: senha_local
+    depends_on:
+      postgres:
+        condition: service_healthy
+    stdin_open: true
+    tty: true
+
+  postgres:
+    image: postgres:18
+    environment:
+      POSTGRES_USER: brasil
+      POSTGRES_PASSWORD: senha_local
+      POSTGRES_DB: brasil_eleitoral_development
+    volumes:
+      - postgres_data:/var/lib/postgresql
+    healthcheck:
+      test:
+        - CMD
+        - pg_isready
+        - -h
+        - "127.0.0.1"
+        - -U
+        - brasil
+        - -d
+        - brasil_eleitoral_development
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 10s
+
+volumes:
+  gems:
+  postgres_data:

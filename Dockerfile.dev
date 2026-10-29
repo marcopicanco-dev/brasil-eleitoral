@@ -1,0 +1,22 @@
+FROM ruby:4.0.5-slim
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+       build-essential \
+       curl \
+       git \
+       libpq-dev \
+       libyaml-dev \
+       pkg-config \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN gem install bundler --version 4.0.10 --no-document \
+    && gem install foreman --no-document
+
+WORKDIR /app
+
+ENV RAILS_ENV=development
+
+EXPOSE 3000
+
+CMD ["bash"]
