@@ -2,7 +2,7 @@
 
 ![Dashboard do Brasil Eleitoral com indicadores e linha do tempo dos governos](docs/images/brasil-eleitoral-dashboard.png)
 
-Dashboard dos presidentes que exerceram o governo desde a redemocratização em 1985. Interface em português, construída com views Rails e Tailwind CSS.
+Dashboard dos presidentes que exerceram o governo desde a redemocratização em 1985. Interface construída com views Rails e Tailwind CSS.
 
 O tema tem fundo branco, verde nas ações, azul nos títulos e amarelo nos destaques. A paleta está centralizada nas variáveis de `app/assets/tailwind/application.css`.
 
@@ -128,15 +128,61 @@ A configuração de desenvolvimento utiliza PostgreSQL 18, host `postgres`, usu�
 - Layout responsivo e navegação móvel.
 - Página de fontes e metodologia.
 
-## Dados e critérios
+## Coleta de dados
 
-O catálogo está em [db/data/administrations.yml](db/data/administrations.yml); a série econômica está em [db/data/ipca.json](db/data/ipca.json). A carga é idempotente.
+O dashboard não consulta APIs nem sites externos durante a navegação. Os dados são coletados e conferidos manualmente nas fontes, gravados em arquivos versionados no repositório e importados para o PostgreSQL. Assim, cada número exibido pode ser rastreado até um arquivo, e a aplicação funciona sem depender da disponibilidade de terceiros.
 
-A origem dos mandatos está em [db/data/accessions.yml](db/data/accessions.yml), que referencia por ano as eleições em [db/data/elections.yml](db/data/elections.yml). A carga resolve essas referências no campo JSONB `accession` de cada governo. Resultados, alianças e fontes também são incluídos na exportação CSV.
+O fluxo tem quatro etapas:
+
+1. **Coleta:** o dado é obtido na fonte (arquivo de dados abertos, API pública ou página oficial). Registramos a URL, o arquivo usado e, quando existir, a data de geração ou da consulta.
+2. **Tratamento:** quando a fonte traz dados desagregados, eles são somados e os percentuais são recalculados com uma regra única, documentada em [db/data/README.md](db/data/README.md).
+3. **Registro:** o resultado vai para `db/data/` (YAML ou JSON) ou para `config/candidate_portraits.json`, com a fonte ao lado de cada registro.
+4. **Carga:** `bin/rails db:seed` lê os arquivos e grava tudo em uma única transação. A carga é idempotente: localiza registros por slug ou ano, atualiza o que mudou e não apaga o que não está nos arquivos.
+
+| Arquivo | Conteúdo | Fonte | Como foi coletado |
+| --- | --- | --- | --- |
+| [administrations.yml](db/data/administrations.yml) | 8 presidentes e 9 períodos, com datas, partido, posição, economia, políticas e marcos | Legislação no Planalto, Banco Central, Senado | Curadoria editorial; cada governo lista as leis e páginas que sustentam seus destaques |
+| [elections.yml](db/data/elections.yml) | 10 eleições (1985–2022): chapas, candidatos por turno, votos, percentuais e coligações | Portal de Dados Abertos do TSE; TREs para coligações e para 1998; TSE e STF para o Colégio Eleitoral de 1985 | Soma da votação presidencial (`CD_CARGO = 1`) por turno e candidatura nos arquivos por UF ou município/zona; em 1998, lista nacional do TRE-SC |
+| [accessions.yml](db/data/accessions.yml) | Como cada presidente chegou ao poder (eleição direta, indireta ou sucessão) | Presidência, Arquivo Nacional, Senado, TRE-RJ | Texto editorial que referencia as eleições por ano; o seed resolve essas referências no JSONB `accession` |
+| [ipca.json](db/data/ipca.json) | IPCA acumulado no ano, Brasil, 1995–2024 | API do SIDRA/IBGE, tabela 1737, variável 69 | Consulta ao mês de dezembro de cada ano, feita em 28/10/2026 |
+| [candidate_portraits.json](config/candidate_portraits.json) | 59 retratos de candidatos e presidentes | TSE (38), Câmara dos Deputados (19), Senado (1), Biblioteca da Presidência (1) | Cópia local em `app/assets/images/portraits/`, com URL de origem, arquivo do pacote e crédito |
+
+O gráfico **Esquerda versus Direita** não tem arquivo próprio: é calculado em `DashboardHelper#political_tenure_series` a partir das datas e posições de `administrations.yml`.
+
+A exportação CSV reúne governos, resultados, alianças e fontes, e acompanha os filtros selecionados.
+
+## Escolha das fontes
+
+As fontes seguem esta ordem de preferência:
+
+1. **Dado primário oficial e reprodutível.** Para votos, usamos os arquivos do Portal de Dados Abertos do TSE; para inflação, o SIDRA/IBGE; para leis, o texto no portal do Planalto. Com eles, qualquer pessoa pode refazer a conta e chegar ao mesmo número.
+2. **Publicação oficial de outro órgão público**, quando o dado primário não existe ou está incompleto. Um exemplo é 1998, cuja lista nacional com os 12 candidatos vem da série histórica do TRE-SC. Também entram aqui Senado, Câmara, Presidência, Arquivo Nacional e Banco Central, para datas, sucessões e contexto.
+3. **Referência acadêmica**, apenas como contexto. Bolognesi, Ribeiro e Codato (*Dados*, 2023), CEBRAP/NECI e FGV/CPDOC embasam a discussão sobre posições políticas. Os rótulos desses trabalhos não são aplicados automaticamente aos governos.
+
+Alguns critérios valem para todas as fontes:
+
+- **Uma base por eleição.** Os candidatos de uma eleição vêm todos da mesma totalização, sem misturar consolidações diferentes. Os percentuais são recalculados sobre os votos válidos da própria base.
+- **Edição registrada.** O campo `results_source` guarda a URL, o arquivo e a data de geração. Os arquivos do TSE são reeditados com o tempo, então os números podem diferir de reportagens antigas.
+- **Recortes declarados.** Quando a fonte tem lacunas, como a ausência dos votos do exterior em 1994, a lacuna aparece no perfil em vez de ser preenchida com outra fonte.
+- **Só dados públicos necessários.** Do cadastro de candidaturas extraímos apenas nome, partido, número e situação. Retratos vêm de acervos oficiais identificados; quando não há foto confiável, a interface mostra as iniciais.
+- **Julgamento editorial explícito.** Posições políticas, seleção de políticas e o agrupamento do centro no bloco azul do gráfico são escolhas editoriais e estão identificadas como tal.
+
+Os detalhes por eleição, como arquivos, totais e casos especiais, estão em [db/data/README.md](db/data/README.md). A página **/metodologia** explica esses critérios para quem usa o dashboard.
+
+### Atualizar ou acrescentar dados
+
+1. Obtenha o dado na fonte de maior preferência disponível e anote a URL, o arquivo e a data de geração ou consulta.
+2. Edite o arquivo correspondente em `db/data/`, preenchendo o campo de fonte do registro.
+3. Se o tratamento for novo ou fugir da regra, documente-o em [db/data/README.md](db/data/README.md).
+4. Recarregue com `docker compose exec app bin/rails db:seed` e rode os testes.
+
+Como o seed não remove registros, apagar uma entrada do arquivo não a tira do banco. Nesse caso, remova o registro manualmente.
+
+## Critérios de apresentação
 
 FHC e os mandatos consecutivos de Lula e Dilma são agrupados por período contínuo. Lula a partir de 2023 tem registro próprio. As datas usam o último dia completo anterior à sucessão; as notas distinguem exercício e titularidade. Tancredo não entra na contagem, pois não exerceu o cargo.
 
-As posições políticas são sínteses editoriais qualitativas. As políticas são uma seleção inicial, com cobertura até 2024 no período aberto em 2023. A página **/metodologia** explica critérios, limites e fontes; o gráfico econômico não atribui causalidade aos presidentes. Veja a [proveniência dos dados](db/data/README.md).
+As posições políticas são sínteses editoriais qualitativas. As políticas são uma seleção inicial, com cobertura até 2024 no período aberto em 2023. O gráfico econômico não atribui causalidade aos presidentes.
 
 ## Verificação
 
