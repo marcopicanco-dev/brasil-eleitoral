@@ -43,6 +43,17 @@ module DashboardHelper
 
   def chart_coordinate(value) = format("%.2f", value)
 
+  def candidate_portrait(name, css: "", initials: nil)
+    portrait = CandidatePortrait.for_name(name)
+    content_tag :span, class: "portrait #{css}", title: portrait ? "Foto: #{portrait.fetch('credit')}" : "Foto não disponível no acervo consultado" do
+      if portrait
+        image_tag portrait.fetch("asset"), alt: "", loading: "lazy", decoding: "async", width: 64, height: 64
+      else
+        tag.span(initials || name.split.map(&:first).first(2).join, class: "portrait-initials", "aria-hidden": true)
+      end
+    end
+  end
+
   def political_tenure_series(governments, through: Date.current, include_center: false, observed_through: nil)
     origin = Date.new(1985, 3, 15)
     return [] if through < origin

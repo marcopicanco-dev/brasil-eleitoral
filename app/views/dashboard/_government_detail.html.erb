@@ -1,5 +1,5 @@
 <article class="panel government-detail">
-  <div class="profile-top"><span class="avatar avatar-large position-<%= government.position %>"><%= government.president.initials %></span><div><span class="eyebrow"><%= government.period %></span><h2><%= government.label %></h2><span class="party-label"><%= government.party %></span></div></div>
+  <div class="profile-top"><%= candidate_portrait government.president.name, css: "avatar avatar-large position-#{government.position}", initials: government.president.initials %><div><span class="eyebrow"><%= government.period %></span><h2><%= government.label %></h2><span class="party-label"><%= government.party %></span></div></div>
   <div class="profile-badges"><%= position_badge government %><span class="small-tag"><%= l government.started_on %> → <%= government.ended_on ? l(government.ended_on) : "em exercício" %></span></div>
   <% if government.accession.present? %><%= render "accession", government: government %><% end %>
   <div class="detail-block"><h3>Posicionamento e contexto</h3><p><%= government.political_context %></p></div>

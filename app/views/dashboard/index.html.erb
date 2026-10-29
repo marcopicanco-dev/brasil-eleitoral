@@ -41,7 +41,7 @@
     <div class="timeline-track">
       <% @timeline.each do |government| %>
         <%= link_to administration_path(government), class: "timeline-item position-#{government.position}" do %>
-          <span class="timeline-year"><%= government.started_on.year %></span><span class="timeline-node"><%= government.president.initials %></span><strong><%= government.president.short_name %></strong><span class="timeline-party"><%= government.party.split(" / ").first %></span>
+          <span class="timeline-year"><%= government.started_on.year %></span><%= candidate_portrait government.president.name, css: "timeline-node", initials: government.president.initials %><strong><%= government.president.short_name %></strong><span class="timeline-party"><%= government.party.split(" / ").first %></span>
         <% end %>
       <% end %>
     </div>

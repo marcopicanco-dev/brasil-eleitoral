@@ -1,0 +1,470 @@
+{
+  "Jair Bolsonaro": {
+    "asset": "portraits/jair-bolsonaro.jpeg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2022",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/fotos/foto_cand2022_BR_div.zip",
+    "archive_entry": "FBR280001618036_div.jpeg",
+    "credit": "TSE · Registro de candidatura de 2022",
+    "year": 2022,
+    "candidate_id": "280001618036"
+  },
+  "Simone Tebet": {
+    "asset": "portraits/simone-tebet.jpg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2022",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/fotos/foto_cand2022_BR_div.zip",
+    "archive_entry": "FBR280001607833_div.jpg",
+    "credit": "TSE · Registro de candidatura de 2022",
+    "year": 2022,
+    "candidate_id": "280001607833"
+  },
+  "Ciro Gomes": {
+    "asset": "portraits/ciro-gomes.jpg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2022",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/fotos/foto_cand2022_BR_div.zip",
+    "archive_entry": "FBR280001612393_div.jpg",
+    "credit": "TSE · Registro de candidatura de 2022",
+    "year": 2022,
+    "candidate_id": "280001612393"
+  },
+  "Vera Lúcia": {
+    "asset": "portraits/vera-lucia.jpg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2022",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/fotos/foto_cand2022_BR_div.zip",
+    "archive_entry": "FBR280001607831_div.jpg",
+    "credit": "TSE · Registro de candidatura de 2022",
+    "year": 2022,
+    "candidate_id": "280001607831"
+  },
+  "Lula": {
+    "asset": "portraits/lula.jpg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2022",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/fotos/foto_cand2022_BR_div.zip",
+    "archive_entry": "FBR280001607829_div.jpg",
+    "credit": "TSE · Registro de candidatura de 2022",
+    "year": 2022,
+    "candidate_id": "280001607829"
+  },
+  "José Maria Eymael": {
+    "asset": "portraits/jose-maria-eymael.jpeg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2022",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/fotos/foto_cand2022_BR_div.zip",
+    "archive_entry": "FBR280001677435_div.jpeg",
+    "credit": "TSE · Registro de candidatura de 2022",
+    "year": 2022,
+    "candidate_id": "280001677435"
+  },
+  "Constituinte Eymael": {
+    "asset": "portraits/jose-maria-eymael.jpeg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2022",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/fotos/foto_cand2022_BR_div.zip",
+    "archive_entry": "FBR280001677435_div.jpeg",
+    "credit": "TSE · Registro de candidatura de 2022",
+    "year": 2022,
+    "candidate_id": "280001677435"
+  },
+  "Felipe d’Avila": {
+    "asset": "portraits/felipe-davila.jpg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2022",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/fotos/foto_cand2022_BR_div.zip",
+    "archive_entry": "FBR280001603612_div.jpg",
+    "credit": "TSE · Registro de candidatura de 2022",
+    "year": 2022,
+    "candidate_id": "280001603612"
+  },
+  "Soraya Thronicke": {
+    "asset": "portraits/soraya-thronicke.jpg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2022",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/fotos/foto_cand2022_BR_div.zip",
+    "archive_entry": "FBR280001644128_div.jpg",
+    "credit": "TSE · Registro de candidatura de 2022",
+    "year": 2022,
+    "candidate_id": "280001644128"
+  },
+  "Sofia Manzano": {
+    "asset": "portraits/sofia-manzano.jpeg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2022",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/fotos/foto_cand2022_BR_div.zip",
+    "archive_entry": "FBR280001600167_div.jpeg",
+    "credit": "TSE · Registro de candidatura de 2022",
+    "year": 2022,
+    "candidate_id": "280001600167"
+  },
+  "Léo Péricles": {
+    "asset": "portraits/leo-pericles.jpg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2022",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/fotos/foto_cand2022_BR_div.zip",
+    "archive_entry": "FBR280001602702_div.jpg",
+    "credit": "TSE · Registro de candidatura de 2022",
+    "year": 2022,
+    "candidate_id": "280001602702"
+  },
+  "Padre Kelmon": {
+    "asset": "portraits/padre-kelmon.jpeg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2022",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/fotos/foto_cand2022_BR_div.zip",
+    "archive_entry": "FBR280001734029_div.jpeg",
+    "credit": "TSE · Registro de candidatura de 2022",
+    "year": 2022,
+    "candidate_id": "280001734029"
+  },
+  "Fernando Haddad": {
+    "asset": "portraits/fernando-haddad.jpg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2018",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/fotos/foto_cand2018_BR_div.zip",
+    "archive_entry": "FBR280000629808_div.jpg",
+    "credit": "TSE · Registro de candidatura de 2018",
+    "year": 2018,
+    "candidate_id": "280000629808"
+  },
+  "Geraldo Alckmin": {
+    "asset": "portraits/geraldo-alckmin.jpg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2018",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/fotos/foto_cand2018_BR_div.zip",
+    "archive_entry": "FBR280000602477_div.jpg",
+    "credit": "TSE · Registro de candidatura de 2018",
+    "year": 2018,
+    "candidate_id": "280000602477"
+  },
+  "Marina Silva": {
+    "asset": "portraits/marina-silva.jpg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2018",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/fotos/foto_cand2018_BR_div.zip",
+    "archive_entry": "FBR280000622171_div.jpg",
+    "credit": "TSE · Registro de candidatura de 2018",
+    "year": 2018,
+    "candidate_id": "280000622171"
+  },
+  "Álvaro Dias": {
+    "asset": "portraits/alvaro-dias.jpg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2018",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/fotos/foto_cand2018_BR_div.zip",
+    "archive_entry": "FBR280000618462_div.jpg",
+    "credit": "TSE · Registro de candidatura de 2018",
+    "year": 2018,
+    "candidate_id": "280000618462"
+  },
+  "Henrique Meirelles": {
+    "asset": "portraits/henrique-meirelles.jpg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2018",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/fotos/foto_cand2018_BR_div.zip",
+    "archive_entry": "FBR280000622281_div.jpg",
+    "credit": "TSE · Registro de candidatura de 2018",
+    "year": 2018,
+    "candidate_id": "280000622281"
+  },
+  "Cabo Daciolo": {
+    "asset": "portraits/cabo-daciolo.jpg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2018",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/fotos/foto_cand2018_BR_div.zip",
+    "archive_entry": "FBR280000602500_div.jpg",
+    "credit": "TSE · Registro de candidatura de 2018",
+    "year": 2018,
+    "candidate_id": "280000602500"
+  },
+  "João Amoêdo": {
+    "asset": "portraits/joao-amoedo.jpg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2018",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/fotos/foto_cand2018_BR_div.zip",
+    "archive_entry": "FBR280000607640_div.jpg",
+    "credit": "TSE · Registro de candidatura de 2018",
+    "year": 2018,
+    "candidate_id": "280000607640"
+  },
+  "João Goulart Filho": {
+    "asset": "portraits/joao-goulart-filho.jpg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2018",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/fotos/foto_cand2018_BR_div.zip",
+    "archive_entry": "FBR280000624082_div.jpg",
+    "credit": "TSE · Registro de candidatura de 2018",
+    "year": 2018,
+    "candidate_id": "280000624082"
+  },
+  "Guilherme Boulos": {
+    "asset": "portraits/guilherme-boulos.jpg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2018",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2018/fotos/foto_cand2018_BR_div.zip",
+    "archive_entry": "FBR280000601016_div.jpg",
+    "credit": "TSE · Registro de candidatura de 2018",
+    "year": 2018,
+    "candidate_id": "280000601016"
+  },
+  "Aécio Neves": {
+    "asset": "portraits/aecio-neves.jpg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2014",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/fotos/foto_cand2014_BR_div.zip",
+    "archive_entry": "BR280000000085_div.jpg",
+    "credit": "TSE · Registro de candidatura de 2014",
+    "year": 2014,
+    "candidate_id": "280000000085"
+  },
+  "Mauro Iasi": {
+    "asset": "portraits/mauro-iasi.jpg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2014",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/fotos/foto_cand2014_BR_div.zip",
+    "archive_entry": "BR280000000041_div.jpg",
+    "credit": "TSE · Registro de candidatura de 2014",
+    "year": 2014,
+    "candidate_id": "280000000041"
+  },
+  "Luciana Genro": {
+    "asset": "portraits/luciana-genro.jpg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2014",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/fotos/foto_cand2014_BR_div.zip",
+    "archive_entry": "BR280000000043_div.jpg",
+    "credit": "TSE · Registro de candidatura de 2014",
+    "year": 2014,
+    "candidate_id": "280000000043"
+  },
+  "Dilma Rousseff": {
+    "asset": "portraits/dilma-rousseff.jpg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2014",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/fotos/foto_cand2014_BR_div.zip",
+    "archive_entry": "BR280000000083_div.jpg",
+    "credit": "TSE · Registro de candidatura de 2014",
+    "year": 2014,
+    "candidate_id": "280000000083"
+  },
+  "Rui Costa Pimenta": {
+    "asset": "portraits/rui-costa-pimenta.jpg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2014",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/fotos/foto_cand2014_BR_div.zip",
+    "archive_entry": "BR280000000081_div.jpg",
+    "credit": "TSE · Registro de candidatura de 2014",
+    "year": 2014,
+    "candidate_id": "280000000081"
+  },
+  "Eduardo Jorge": {
+    "asset": "portraits/eduardo-jorge.jpg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2014",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/fotos/foto_cand2014_BR_div.zip",
+    "archive_entry": "BR280000000061_div.jpg",
+    "credit": "TSE · Registro de candidatura de 2014",
+    "year": 2014,
+    "candidate_id": "280000000061"
+  },
+  "Pastor Everaldo": {
+    "asset": "portraits/pastor-everaldo.jpg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2014",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/fotos/foto_cand2014_BR_div.zip",
+    "archive_entry": "BR280000000065_div.jpg",
+    "credit": "TSE · Registro de candidatura de 2014",
+    "year": 2014,
+    "candidate_id": "280000000065"
+  },
+  "Levy Fidelix": {
+    "asset": "portraits/levy-fidelix.jpg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2014",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/fotos/foto_cand2014_BR_div.zip",
+    "archive_entry": "BR280000000021_div.jpg",
+    "credit": "TSE · Registro de candidatura de 2014",
+    "year": 2014,
+    "candidate_id": "280000000021"
+  },
+  "José Maria de Almeida": {
+    "asset": "portraits/jose-maria-de-almeida.jpg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2014",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/fotos/foto_cand2014_BR_div.zip",
+    "archive_entry": "BR280000000001_div.jpg",
+    "credit": "TSE · Registro de candidatura de 2014",
+    "year": 2014,
+    "candidate_id": "280000000001"
+  },
+  "Zé Maria": {
+    "asset": "portraits/jose-maria-de-almeida.jpg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2014",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2014/fotos/foto_cand2014_BR_div.zip",
+    "archive_entry": "BR280000000001_div.jpg",
+    "credit": "TSE · Registro de candidatura de 2014",
+    "year": 2014,
+    "candidate_id": "280000000001"
+  },
+  "José Serra": {
+    "asset": "portraits/jose-serra.jpg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2010",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2010/fotos/foto_cand2010_BR_div.zip",
+    "archive_entry": "BR280000000011_div.jpg",
+    "credit": "TSE · Registro de candidatura de 2010",
+    "year": 2010,
+    "candidate_id": "280000000011"
+  },
+  "Ivan Pinheiro": {
+    "asset": "portraits/ivan-pinheiro.jpg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2010",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2010/fotos/foto_cand2010_BR_div.zip",
+    "archive_entry": "BR280000000017_div.jpg",
+    "credit": "TSE · Registro de candidatura de 2010",
+    "year": 2010,
+    "candidate_id": "280000000017"
+  },
+  "Plínio de Arruda Sampaio": {
+    "asset": "portraits/plinio-de-arruda-sampaio.jpg",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2010",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2010/fotos/foto_cand2010_BR_div.zip",
+    "archive_entry": "BR280000000019_div.jpg",
+    "credit": "TSE · Registro de candidatura de 2010",
+    "year": 2010,
+    "candidate_id": "280000000019"
+  },
+  "Ana Maria Rangel": {
+    "asset": "portraits/ana-maria-rangel.png",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2006",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2006/fotos/foto_cand2006_BR_div.zip",
+    "archive_entry": "FBR61_div.png",
+    "credit": "TSE · Registro de candidatura de 2006",
+    "year": 2006,
+    "candidate_id": "61"
+  },
+  "Cristovam Buarque": {
+    "asset": "portraits/cristovam-buarque.png",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2006",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2006/fotos/foto_cand2006_BR_div.zip",
+    "archive_entry": "FBR21_div.png",
+    "credit": "TSE · Registro de candidatura de 2006",
+    "year": 2006,
+    "candidate_id": "21"
+  },
+  "Heloísa Helena": {
+    "asset": "portraits/heloisa-helena.png",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2006",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2006/fotos/foto_cand2006_BR_div.zip",
+    "archive_entry": "FBR41_div.png",
+    "credit": "TSE · Registro de candidatura de 2006",
+    "year": 2006,
+    "candidate_id": "41"
+  },
+  "Luciano Bivar": {
+    "asset": "portraits/luciano-bivar.png",
+    "source_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2006",
+    "image_url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2006/fotos/foto_cand2006_BR_div.zip",
+    "archive_entry": "FBR1_div.png",
+    "credit": "TSE · Registro de candidatura de 2006",
+    "year": 2006,
+    "candidate_id": "1"
+  },
+  "Tancredo Neves": {
+    "asset": "portraits/tancredo-neves.jpg",
+    "source_url": "https://www.camara.leg.br/deputados/131619/biografia",
+    "image_url": "https://www.camara.leg.br/internet/deputado/bandep/131619.jpg",
+    "credit": "Câmara dos Deputados · Acervo parlamentar"
+  },
+  "Paulo Maluf": {
+    "asset": "portraits/paulo-maluf.jpg",
+    "source_url": "https://www.camara.leg.br/deputados/132056/biografia",
+    "image_url": "https://www.camara.leg.br/internet/deputado/bandep/132056.jpg",
+    "credit": "Câmara dos Deputados · Acervo parlamentar"
+  },
+  "Fernando Collor": {
+    "asset": "portraits/fernando-collor.jpg",
+    "source_url": "https://www.camara.leg.br/deputados/132129/biografia",
+    "image_url": "https://www.camara.leg.br/internet/deputado/bandep/132129.jpg",
+    "credit": "Câmara dos Deputados · Acervo parlamentar"
+  },
+  "Leonel Brizola": {
+    "asset": "portraits/leonel-brizola.jpg",
+    "source_url": "https://www.camara.leg.br/deputados/131041/biografia",
+    "image_url": "https://www.camara.leg.br/internet/deputado/bandep/131041.jpg",
+    "credit": "Câmara dos Deputados · Acervo parlamentar"
+  },
+  "Mário Covas": {
+    "asset": "portraits/mario-covas.jpg",
+    "source_url": "https://www.camara.leg.br/deputados/132024/biografia",
+    "image_url": "https://www.camara.leg.br/internet/deputado/bandep/132024.jpg",
+    "credit": "Câmara dos Deputados · Acervo parlamentar"
+  },
+  "Ulysses Guimarães": {
+    "asset": "portraits/ulysses-guimaraes.jpg",
+    "source_url": "https://www.camara.leg.br/deputados/133850/biografia",
+    "image_url": "https://www.camara.leg.br/internet/deputado/bandep/133850.jpg",
+    "credit": "Câmara dos Deputados · Acervo parlamentar"
+  },
+  "Roberto Freire": {
+    "asset": "portraits/roberto-freire.jpg",
+    "source_url": "https://www.camara.leg.br/deputados/73805/biografia",
+    "image_url": "https://www.camara.leg.br/internet/deputado/bandep/73805.jpg",
+    "credit": "Câmara dos Deputados · Acervo parlamentar"
+  },
+  "Aureliano Chaves": {
+    "asset": "portraits/aureliano-chaves.jpg",
+    "source_url": "https://www.camara.leg.br/deputados/131396/biografia",
+    "image_url": "https://www.camara.leg.br/internet/deputado/bandep/131396.jpg",
+    "credit": "Câmara dos Deputados · Acervo parlamentar"
+  },
+  "Ronaldo Caiado": {
+    "asset": "portraits/ronaldo-caiado.jpg",
+    "source_url": "https://www.camara.leg.br/deputados/74813/biografia",
+    "image_url": "https://www.camara.leg.br/internet/deputado/bandep/74813.jpg",
+    "credit": "Câmara dos Deputados · Acervo parlamentar"
+  },
+  "Affonso Camargo": {
+    "asset": "portraits/affonso-camargo.jpg",
+    "source_url": "https://www.camara.leg.br/deputados/73765/biografia",
+    "image_url": "https://www.camara.leg.br/internet/deputado/bandep/73765.jpg",
+    "credit": "Câmara dos Deputados · Acervo parlamentar"
+  },
+  "Enéas Carneiro": {
+    "asset": "portraits/eneas-carneiro.jpg",
+    "source_url": "https://www.camara.leg.br/deputados/74269/biografia",
+    "image_url": "https://www.camara.leg.br/internet/deputado/bandep/74269.jpg",
+    "credit": "Câmara dos Deputados · Acervo parlamentar"
+  },
+  "Fernando Gabeira": {
+    "asset": "portraits/fernando-gabeira.jpg",
+    "source_url": "https://www.camara.leg.br/deputados/74841/biografia",
+    "image_url": "https://www.camara.leg.br/internet/deputado/bandep/74841.jpg",
+    "credit": "Câmara dos Deputados · Acervo parlamentar"
+  },
+  "Celso Brant": {
+    "asset": "portraits/celso-brant.jpg",
+    "source_url": "https://www.camara.leg.br/deputados/130737/biografia",
+    "image_url": "https://www.camara.leg.br/internet/deputado/bandep/130737.jpg",
+    "credit": "Câmara dos Deputados · Acervo parlamentar"
+  },
+  "Esperidião Amin": {
+    "asset": "portraits/esperidiao-amin.jpg",
+    "source_url": "https://www.camara.leg.br/deputados/160649/biografia",
+    "image_url": "https://www.camara.leg.br/internet/deputado/bandep/160649.jpg",
+    "credit": "Câmara dos Deputados · Acervo parlamentar"
+  },
+  "Alfredo Sirkis": {
+    "asset": "portraits/alfredo-sirkis.jpg",
+    "source_url": "https://www.camara.leg.br/deputados/116663/biografia",
+    "image_url": "https://www.camara.leg.br/internet/deputado/bandep/116663.jpg",
+    "credit": "Câmara dos Deputados · Acervo parlamentar"
+  },
+  "Garotinho": {
+    "asset": "portraits/garotinho.jpg",
+    "source_url": "https://www.camara.leg.br/deputados/160539/biografia",
+    "image_url": "https://www.camara.leg.br/internet/deputado/bandep/160539.jpg",
+    "credit": "Câmara dos Deputados · Acervo parlamentar"
+  },
+  "José Sarney": {
+    "asset": "portraits/jose-sarney.jpg",
+    "source_url": "https://www.camara.leg.br/deputados/131036/biografia",
+    "image_url": "https://www.camara.leg.br/internet/deputado/bandep/131036.jpg",
+    "credit": "Câmara dos Deputados · Acervo parlamentar"
+  },
+  "Michel Temer": {
+    "asset": "portraits/michel-temer.jpg",
+    "source_url": "https://www.camara.leg.br/deputados/73552/biografia",
+    "image_url": "https://www.camara.leg.br/internet/deputado/bandep/73552.jpg",
+    "credit": "Câmara dos Deputados · Acervo parlamentar"
+  },
+  "Itamar Franco": {
+    "asset": "portraits/itamar-franco.jpg",
+    "source_url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/1754",
+    "image_url": "https://legis.senado.leg.br/senadores/fotos-oficiais/1754",
+    "credit": "Senado Federal · Foto oficial"
+  },
+  "Guilherme Afif Domingos": {
+    "asset": "portraits/guilherme-afif-domingos.jpg",
+    "source_url": "https://www.camara.leg.br/deputados/139127/biografia",
+    "image_url": "https://www.camara.leg.br/internet/deputado/bandep/139127.jpg",
+    "credit": "Câmara dos Deputados · Acervo parlamentar"
+  },
+  "Fernando Henrique Cardoso": {
+    "asset": "portraits/fernando-henrique-cardoso.jpeg",
+    "source_url": "https://www.gov.br/secretariageral/pt-br/centrais-de-conteudo/biblioteca-da-pr/galeria-dos-ex-presidentes/fernando-henrique-cardoso",
+    "image_url": "https://www.gov.br/secretariageral/pt-br/centrais-de-conteudo/biblioteca-da-pr/galeria-dos-ex-presidentes/fernando-henrique-cardoso/copy_of_capa-dados-ex-presidente/@@govbr.institucional.banner/a6a17089-932a-4af2-b010-101c8651f382/@@images/d0a3cf9c-d0cd-4b02-9177-0cb70b77e94c.jpeg",
+    "credit": "Biblioteca da Presidência da República · Retrato de Fernando Henrique Cardoso"
+  }
+}

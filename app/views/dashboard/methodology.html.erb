@@ -43,6 +43,19 @@
     <a href="https://www.bcb.gov.br/controleinflacao/planoreal" target="_blank" rel="noopener">Banco Central · Plano Real <%= icon :external %></a>
     <a href="https://www.bcb.gov.br/controleinflacao/30anosreal" target="_blank" rel="noopener">Banco Central · História da estabilização <%= icon :external %></a>
   </div>
+<<<<<<< HEAD
   <h3>Identidade visual</h3>
   <p>A interface utiliza views Rails e Tailwind CSS, com fundo branco e verde, amarelo e azul inspirados na bandeira do Brasil.</p>
+=======
+  <h3 id="fotos">Fotos dos candidatos e presidentes</h3>
+  <p>Os retratos são cópias locais de arquivos oficiais do TSE, da Câmara dos Deputados, do Senado Federal e da Biblioteca da Presidência da República. Usamos uma foto de referência por pessoa; ela pode pertencer a uma eleição ou período diferente daquele exibido. A imagem não identifica filiação partidária na data do retrato. Quando não localizamos uma foto identificada com segurança, mostramos as iniciais. Não geramos retratos artificiais.</p>
+  <ul class="portrait-credits">
+    <% CandidatePortrait::RECORDS.sort.each do |name, portrait| %>
+      <li><strong><%= name %></strong> · <a href="<%= portrait.fetch("source_url") %>" target="_blank" rel="noopener"><%= portrait.fetch("credit") %></a></li>
+    <% end %>
+  </ul>
+  <h3>Créditos do design</h3>
+  <p>A interface adapta a navegação lateral e os painéis do Light Blue React Template, da Flatlogic, para Rails e Tailwind CSS. O tema usa fundo branco com verde, amarelo e azul inspirados na bandeira do Brasil. A licença MIT original está preservada em docs/licenses/light-blue-react-template.txt.</p>
+  <a class="source-link" href="https://github.com/flatlogic/light-blue-react-template" target="_blank" rel="noopener">Flatlogic · Light Blue React Template <%= icon :external %></a>
+>>>>>>> 75522bd (adicionando fotos dos candidatos)
 </article>

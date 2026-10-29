@@ -26,6 +26,7 @@
                 <li class="election-candidate <%= "ticket-winner" if candidate["elected"] %>">
                   <div class="candidate-identity">
                     <span class="candidate-rank" aria-hidden="true"><%= (index + 1).to_s.rjust(2, "0") %></span>
+                    <%= candidate_portrait candidate.fetch("name"), css: "candidate-photo" %>
                     <span class="candidate-name"><%= candidate.fetch("name") %><small><%= candidate.fetch("party") %><%= " · Nº #{candidate["number"]}" if candidate["number"] %></small>
                       <% if candidate["elected"] %><span class="candidate-status">Eleito</span><% elsif candidate["advanced"] %><span class="candidate-status">Vai ao 2º turno</span><% end %>
                       <% if candidate["status_note"].present? %><small class="candidate-status-note"><%= candidate.fetch("status_note") %></small><% end %>
@@ -51,6 +52,6 @@
       <div class="election-sources"><% election.fetch("sources").each do |source| %><a href="<%= source.fetch("url") %>" target="_blank" rel="noopener"><%= source.fetch("title") %><%= icon :external %></a><% end %></div>
     </article>
   <% end %>
-  <p class="election-scope-note"><%= icon :info %><span>As siglas correspondem à época da eleição. A coligação eleitoral e a base parlamentar durante o governo podem ser diferentes.</span></p>
+  <p class="election-scope-note"><%= icon :info %><span>As siglas correspondem à época da eleição. A coligação eleitoral e a base parlamentar durante o governo podem ser diferentes. Os retratos são imagens de referência e podem ser de outro período. <%= link_to "Fontes e créditos das fotos", methodology_path(anchor: "fotos") %>.</span></p>
   <div class="accession-sources"><% government.accession.fetch("sources").each do |source| %><a href="<%= source.fetch("url") %>" target="_blank" rel="noopener"><%= source.fetch("title") %><%= icon :external %></a><% end %></div>
 </section>
