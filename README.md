@@ -2,7 +2,7 @@
 
 ![Dashboard do Brasil Eleitoral com indicadores e linha do tempo dos governos](docs/images/brasil-eleitoral-dashboard.png)
 
-Dashboard dos presidentes que exerceram o governo desde a redemocratização em 1985. Interface em português, inspirada no [Light Blue React Template](https://github.com/flatlogic/light-blue-react-template), adaptada para views Rails e Tailwind.
+Dashboard dos presidentes que exerceram o governo desde a redemocratização em 1985. Interface em português, construída com views Rails e Tailwind CSS.
 
 O tema tem fundo branco, verde nas ações, azul nos títulos e amarelo nos destaques. A paleta está centralizada nas variáveis de `app/assets/tailwind/application.css`.
 
@@ -159,4 +159,4 @@ Os testes de sistema (`bin/rails test:system`) precisam de um navegador Chrome a
 - `app/javascript/controllers/navigation_controller.js`: menu móvel.
 - `db/seeds.rb`: importação transacional dos arquivos locais.
 
-O projeto está preparado para desenvolvimento local. A licença MIT do template original está preservada em [docs/licenses/light-blue-react-template.txt](docs/licenses/light-blue-react-template.txt).
+O projeto está preparado para desenvolvimento local.
