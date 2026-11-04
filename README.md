@@ -151,10 +151,6 @@ Propostas de evolução, ainda não apresentadas como funcionalidades concluída
 - Disponibilizar um caminho reproduzível para testes de navegador no Docker.
 - Ampliar o catálogo mantendo as fontes e os critérios de atualização documentados.
 
-## Autoria
-
-Projeto de portfólio de [Marco Picanço](https://github.com/marcopicanco-dev), reunindo modelagem de domínio, tratamento de dados públicos, desenvolvimento Rails e testes automatizados.
-
 
 ---
 
