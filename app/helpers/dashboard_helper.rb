@@ -1,5 +1,8 @@
 module DashboardHelper
   ICONS = {
+    github: '<path d="M9 19c-4.3 1.3-4.3-2.2-6-2.7m12 5v-3.4a3 3 0 0 0-.8-2.3c2.7-.3 5.5-1.3 5.5-6A4.7 4.7 0 0 0 18.4 6a4.3 4.3 0 0 0-.1-3.5S17.3 2.2 15 3.8a12 12 0 0 0-6 0C6.7 2.2 5.7 2.5 5.7 2.5A4.3 4.3 0 0 0 5.6 6a4.7 4.7 0 0 0-1.3 3.6c0 4.7 2.8 5.7 5.5 6a3 3 0 0 0-.8 2.3v3.4"/>',
+    linkedin: '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7h.01M11 17v-7m0 3a3 3 0 0 1 6 0v4"/>',
+    mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/>',
     grid: '<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',
     users: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2m20 0v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
     timeline: '<path d="M4 6h16M4 18h16M8 6v12m8-12v12"/><circle cx="8" cy="9" r="2"/><circle cx="16" cy="15" r="2"/>',
@@ -15,6 +18,7 @@ module DashboardHelper
     close: '<path d="m6 6 12 12M6 18 18 6"/>',
     flag: '<path d="M4 22V3m0 0c5-4 11 4 16 0v11c-5 4-11-4-16 0"/>',
     info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-11v1"/>',
+    help: '<circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2-3 4m.1 3h.01"/>',
     calendar: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/>'
   }.freeze
 

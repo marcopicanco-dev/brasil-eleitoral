@@ -29,7 +29,23 @@
       </nav>
       <div class="sidebar-label mt-10">SOBRE O PROJETO</div>
       <%= nav_link "Fontes e metodologia", methodology_path, :info, active: action_name == "methodology" %>
+      <div class="sidebar-contact mt-10">
+        <%= nav_link "Dúvidas e Sugestões", "mailto:marcopicanco@live.com", :help %>
+        <div class="sidebar-label">Marco Picanço</div>
+        <div class="sidebar-socials" aria-label="Redes sociais e contato">
+          <%= link_to "https://github.com/marcopicanco-dev", target: "_blank", rel: "noopener noreferrer", aria: { label: "GitHub de Marco Picanço" }, title: "GitHub" do %>
+            <%= icon :github %>
+          <% end %>
+          <%= link_to "https://www.linkedin.com/in/marcopicanco/", target: "_blank", rel: "noopener noreferrer", aria: { label: "LinkedIn de Marco Picanço" }, title: "LinkedIn" do %>
+            <%= icon :linkedin %>
+          <% end %>
+          <%= mail_to "marcopicanco@live.com", aria: { label: "Enviar email para Marco Picanço" }, title: "marcopicanco@live.com" do %>
+            <%= icon :mail %>
+          <% end %>
+        </div>
+      </div>
       <div class="sidebar-bottom">
+
         <div class="democracy-mark"><span class="status-dot"></span> Memória para a democracia</div>
         <p>Conhecer o passado.<br>Entender o presente.</p>
         <span class="sidebar-version">NOVA REPÚBLICA · DESDE 1985</span>
@@ -52,6 +68,20 @@
         <%= yield %>
         <footer class="page-footer">
           <span>Brasil Eleitoral <span class="footer-dot">·</span> A história em perspectiva.</span>
+          <div class="footer-contact">
+            <span>Marco Picanço - <%= Date.current.year %></span>
+            <div class="sidebar-socials footer-socials" aria-label="Redes sociais e contato">
+              <%= link_to "https://github.com/marcopicanco-dev", target: "_blank", rel: "noopener noreferrer", aria: { label: "GitHub de Marco Picanço" }, title: "GitHub" do %>
+                <%= icon :github %>
+              <% end %>
+              <%= link_to "https://www.linkedin.com/in/marcopicanco/", target: "_blank", rel: "noopener noreferrer", aria: { label: "LinkedIn de Marco Picanço" }, title: "LinkedIn" do %>
+                <%= icon :linkedin %>
+              <% end %>
+              <%= mail_to "marcopicanco@live.com", aria: { label: "Enviar email para Marco Picanço" }, title: "marcopicanco@live.com" do %>
+                <%= icon :mail %>
+              <% end %>
+            </div>
+          </div>
           <%= link_to "Fontes, critérios e contexto", methodology_path %>
         </footer>
       </main>
